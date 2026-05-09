@@ -53,44 +53,12 @@ Outil de visualisation de plusieurs fiches en parallèle. Permet de :
 3. Téléchargez le dossier complet via **Code > Download ZIP** ou via un outil dédié (voir ci-dessous)
 4. Décompressez et ouvrez le fichier HTML dans votre navigateur
 
-**Téléchargement ciblé du dossier `tools/` uniquement (sans cloner le dépôt) :**
-
-```bash
-# Avec git sparse-checkout (Git 2.25+)
-git clone --filter=blob:none --sparse https://github.com/VOTRE_ORG/VOTRE_DEPOT.git
-cd VOTRE_DEPOT
-git sparse-checkout set tools
-```
-
-Ou, avec [DownGit](https://downgit.github.io/) ou [GitZip](https://kinolien.github.io/gitzip/), collez l'URL du dossier `tools/` pour en télécharger une archive directe.
 
 ---
 
 ## Utilisation
 
-Ouvrez simplement le fichier HTML dans un navigateur moderne :
-
-```bash
-# Linux
-xdg-open tools/saisie-fiche-vX.html
-xdg-open tools/visualisation-fiche-vX.html
-
-# macOS
-open tools/saisie-fiche-vX.html
-open tools/visualisation-fiche-vX.html
-
-# Windows
-start tools\saisie-fiche-vX.html
-```
-
-Navigateurs supportés : **Chrome 118+ / Firefox 119+ / Edge 118+**
-
-> **Firefox — import depuis une URL Git :** si le bouton d'import Git ne répond pas en contexte `file://`, lancez un serveur local minimal :
->
-> ```bash
-> python3 -m http.server 8000
-> # puis ouvrir : http://localhost:8000/tools/visualisation-fiche-vX.html
-> ```
+Ouvrez simplement le fichier HTML dans un navigateur web.
 
 ---
 
