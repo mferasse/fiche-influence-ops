@@ -1,0 +1,336 @@
+{
+  "code_operation": "2023-paperwall-mul-chn",
+  "date_creation": "2026-05-08",
+  "date_derniere_maj": "2026-05-08",
+  "statut": "en_cours",
+  "efficacite_estimee": "faible",
+  "portee_estimee": "moyenne",
+  "date_debut": "2023-01-01",
+  "date_fin": "",
+  "commentaires": "Réseau d'au moins 123 sites web exploités depuis la République populaire de Chine, se faisant passer pour des organes d'information locaux dans 30 pays d'Europe, d'Asie et d'Amérique latine. Diffuse de la désinformation pro-Pékin et des attaques ad hominem dissimulées dans de grands volumes de communiqués de presse commerciaux apparemment bénins. Attribution par CitizenLab (rapport No. 174 du 7 février 2024, par Alberto Fittarelli) à la société chinoise Shenzhen Haimaiyunxiang Media Co., Ltd. (alias Haimai), sur la base de liens d'infrastructure numérique. PaperWall présente des similitudes avec l'opération HaiEnergy (premier rapport Mandiant du 4 août 2022, attribué à une autre société chinoise : Shanghai Haixun Technology Co., Ltd alias Haixun, qui exploitait 72 sites inauthentiques (59 domaines + 13 sous-domaines) en 11 langues). CitizenLab assess que PaperWall est une campagne distincte avec différents opérateurs et des TTP uniques, mais que les deux opérations partagent une infrastructure : timesnewswire.com (« fully anonymous asset » selon CitizenLab) sert d'amont aux deux. Caractéristique notable de PaperWall : nature éphémère des composants les plus agressifs (articles attaquant les critiques de Pékin régulièrement retirés après publication). Date de début incertaine (2023 selon les données ouvertes). Précision factuelle (audit 2026-05-08) : selon le rapport CitizenLab n° 174, la majorité des 123 domaines PaperWall (98 environ) intègrent en backlink le service timesnewswire.com, asset anonyme partagé avec HaiEnergy. L'infrastructure technique commune incluait notamment un serveur partagé (02100.vip côté HaiEnergy, registré par Haixun).",
+  "attaquants": [
+    {
+      "nom": "Shenzhen Haimaiyunxiang Media Co., Ltd. (Haimai)",
+      "type": "organisation_privee",
+      "pays_origine": "Chine",
+      "niveau_attribution": "Confirmé",
+      "role_dans_operation": "Opérateur principal",
+      "description": "Société de relations publiques basée en Chine, attribuée par CitizenLab à la campagne PaperWall sur la base de liens d'infrastructure numérique entre le site officiel de l'entreprise et le réseau de sites. Cas d'école illustrant le rôle croissant des entreprises privées dans les opérations d'influence pro-Pékin."
+    },
+    {
+      "nom": "Times Newswire (timesnewswire.com)",
+      "type": "organisation_privee",
+      "pays_origine": "Inconnu (asset anonyme)",
+      "niveau_attribution": "Probable",
+      "role_dans_operation": "Fil d'actualité fournisseur de contenus politiques pro-Pékin dissimulés dans du contenu commercial.",
+      "description": "Service de fil d'actualité auparavant lié à l'opération HaiEnergy. CitizenLab a documenté qu'il insère régulièrement du contenu politique pro-Pékin (incluant des attaques ad hominem) dans de grandes quantités de contenu commercial apparemment bénin. Caractérisé par CitizenLab comme « fully anonymous asset » et utilisant le même plugin (WPBakery) que les sites PaperWall. Possiblement un asset indépendant exploité simultanément par plusieurs opérations."
+    }
+  ],
+  "cibles": [
+    {
+      "pays": "Multi-pays (30 pays)",
+      "region": "Europe, Asie, Amérique latine",
+      "description_libre": "Audiences locales de 30 pays cibles, en particulier celles susceptibles de consommer des actualités via des sites se présentant comme des médias locaux.",
+      "type_cible": [
+        "Finale"
+      ]
+    },
+    {
+      "pays": "Belgique",
+      "region": "Territoire national",
+      "description_libre": "Cible documentée par EU DisinfoLab (site Boic Post, contenu majoritairement en néerlandais sur l'économie, le logement, l'actualité politique).",
+      "type_cible": [
+        "Primaire"
+      ]
+    },
+    {
+      "pays": "Luxembourg",
+      "region": "Territoire national",
+      "description_libre": "Cible documentée par EU DisinfoLab (site Gaul Journal, contenu en luxembourgeois, allemand et français).",
+      "type_cible": [
+        "Primaire"
+      ]
+    },
+    {
+      "pays": "Multi-pays",
+      "region": "Critiques de Pékin (individus)",
+      "description_libre": "Personnalités publiques critiques de Pékin, visées par des attaques ad hominem éphémères publiées sur le réseau.",
+      "type_cible": [
+        "Primaire"
+      ]
+    }
+  ],
+  "canaux_diffusion": [
+    {
+      "canal": "Site web usurpant un média local",
+      "plateforme": "Réseau de 123+ sites adaptés aux langues et contextes locaux",
+      "ampleur": "30 pays couverts, exposition organique négligeable à ce jour"
+    },
+    {
+      "canal": "Fil d'actualité commercial",
+      "plateforme": "Times Newswire (timesnewswire.com)",
+      "ampleur": "Volume important de communiqués de presse, contenant du contenu pro-Pékin dissimulé. Asset anonyme partagé avec HaiEnergy."
+    }
+  ],
+  "relais": [
+    {
+      "nom": "Sites du réseau PaperWall",
+      "type": "Automatisé",
+      "role": "Diffusion principale et adaptation linguistique locale",
+      "degre_conscience": "conscient"
+    },
+    {
+      "nom": "Médias locaux susceptibles d'amplifier par inadvertance",
+      "type": "Humain",
+      "role": "Amplification involontaire identifiée comme risque accru par CitizenLab",
+      "degre_conscience": "inconscient"
+    }
+  ],
+  "techniques": [
+    {
+      "code_disarm": "T0074.001",
+      "nom": "Geopolitical Advantage",
+      "description": "Probable. Promotion des intérêts géopolitiques de Pékin."
+    },
+    {
+      "code_disarm": "T0136.004",
+      "nom": "Boost Reputation",
+      "description": "Probable. Valorisation de la position chinoise sur les sujets ciblés."
+    },
+    {
+      "code_disarm": "T0140.001",
+      "nom": "Defame",
+      "description": "Probable. Attaques ad hominem documentées par CitizenLab contre les critiques de Pékin."
+    },
+    {
+      "code_disarm": "T0072.001",
+      "nom": "Geographic Segmentation",
+      "description": "Probable. Adaptation aux 30 marchés cibles par localisation linguistique et thématique."
+    },
+    {
+      "code_disarm": "T0085.003",
+      "nom": "Develop Inauthentic News Articles",
+      "description": "Probable. Production massive de faux articles de presse locaux."
+    },
+    {
+      "code_disarm": "T0143.002",
+      "nom": "Fabricated Persona",
+      "description": "Probable. Sites entiers fabriqués comme \"organes d'information locaux\" sans existence réelle."
+    },
+    {
+      "code_disarm": "T0097.202",
+      "nom": "News Outlet Persona",
+      "description": "Probable. Mise en scène systématique de l'apparence de médias d'information locaux légitimes."
+    },
+    {
+      "code_disarm": "T0149.001",
+      "nom": "Domain Asset",
+      "description": "Probable. Enregistrement et exploitation de 123+ noms de domaine."
+    },
+    {
+      "code_disarm": "T0152.004",
+      "nom": "Website Asset",
+      "description": "Probable. Sites web constituant l'actif principal du réseau."
+    },
+    {
+      "code_disarm": "T0096",
+      "nom": "Leverage Content Farms",
+      "description": "Probable. Production industrielle de contenu via Times Newswire et opérateurs associés."
+    },
+    {
+      "code_disarm": "T0129.004",
+      "nom": "Delete URLs",
+      "description": "Probable. Caractéristique centrale identifiée par CitizenLab : retrait régulier des articles attaquants après publication (composants éphémères)."
+    },
+    {
+      "code_disarm": "T0130.003",
+      "nom": "Use Shell Organisations",
+      "description": "Probable. Recours à une société écran (Haimai) pour opérer le réseau."
+    },
+    {
+      "code_disarm": "T0130.001",
+      "nom": "Conceal Sponsorship",
+      "description": "Probable. Dissimulation du commanditaire et de l'attribution étatique."
+    },
+    {
+      "code_disarm": "T0098.001",
+      "nom": "Create Inauthentic News Sites",
+      "description": "Probable. Cœur de la campagne : création de 123+ faux sites se présentant comme médias d'information locaux dans 30 pays."
+    },
+    {
+      "code_disarm": "T0084.002",
+      "nom": "Plagiarise Content",
+      "description": "Probable. Sites PaperWall plagiant du contenu de médias locaux légitimes (Het Nieuwsblad, RTL Luxembourg, Wort, etc.) pour donner une apparence d'authenticité éditoriale."
+    },
+    {
+      "code_disarm": "T0097.205",
+      "nom": "Business Persona",
+      "description": "Probable. Haimai et Haixun se présentent comme sociétés de relations publiques commerciales légitimes, masquant leur rôle dans des opérations d'influence pro-Pékin."
+    },
+    {
+      "code_disarm": "T0113",
+      "nom": "Employ Commercial Analytic Firms",
+      "description": "Probable. Recours à des sociétés de PR commerciales (Haimai, Haixun) comme prestataires de l'opération."
+    },
+    {
+      "code_disarm": "T0096.001",
+      "nom": "Create Content Farms",
+      "description": "Probable. Production industrielle de communiqués via Times Newswire et opérateurs associés."
+    }
+  ],
+  "techniques_dima": [
+    {
+      "code_dima": "TE0121",
+      "nom": "Illusion de la fréquence",
+      "description": "Probable. Multiplicité des sites donne l'apparence d'une couverture médiatique large et cohérente."
+    },
+    {
+      "code_dima": "TE0422",
+      "nom": "Biais d'autorité",
+      "description": "Probable. Apparence de média d'information local légitime."
+    },
+    {
+      "code_dima": "TE0231",
+      "nom": "Biais d'homogénéité",
+      "description": "Probable. Renforcement par cohérence de la \"voix médiatique locale\"."
+    },
+    {
+      "code_dima": "TE0332",
+      "nom": "Effet de simple exposition",
+      "description": "Probable. Répétition des positions pro-Pékin via volume de contenu."
+    },
+    {
+      "code_dima": "TE0211",
+      "nom": "Biais de corrélation illusoire",
+      "description": "Probable. Mélange de communiqués commerciaux apparemment bénins et de contenu politique pro-Pékin créant une corrélation fallacieuse entre actualité économique locale et narratifs étatiques."
+    }
+  ],
+  "formats_contenu": [
+    {
+      "format": "Article de presse en ligne",
+      "langue": "Multi-langue (30 langues locales)"
+    },
+    {
+      "format": "Communiqué de presse commercial",
+      "langue": "Multi-langue"
+    }
+  ],
+  "objectifs": [
+    {
+      "type_objectif": "soutien_politique",
+      "description": "Promouvoir les positions et intérêts du gouvernement chinois auprès d'audiences locales étrangères."
+    },
+    {
+      "type_objectif": "delegitimation",
+      "description": "Attaquer ad hominem les critiques de Pékin, à travers des contenus éphémères supprimés rapidement après publication."
+    },
+    {
+      "type_objectif": "desinformation",
+      "description": "Diffuser de la désinformation pro-Pékin sous les apparats de l'information locale légitime."
+    }
+  ],
+  "narratifs": [
+    {
+      "description": "Narratifs pro-Pékin et défavorables aux critiques du gouvernement chinois, présentés comme provenant de médias locaux légitimes.",
+      "veracite": "trompeur",
+      "themes": [
+        "Politique étrangère chinoise",
+        "Image de la Chine",
+        "Critiques de Pékin"
+      ]
+    },
+    {
+      "description": "Attaques ad hominem éphémères contre des personnalités critiques de Pékin.",
+      "veracite": "trompeur",
+      "themes": [
+        "Attaques ad hominem",
+        "Critiques de Pékin"
+      ]
+    }
+  ],
+  "leviers_psychologiques": [
+    "Principe d'autorité",
+    "Principe de la preuve sociale"
+  ],
+  "documents": [
+    {
+      "titre": "PAPERWALL: Chinese Websites Posing as Local News Outlets Target Global Audiences with Pro-Beijing Content (CitizenLab Report No. 174, par Alberto Fittarelli)",
+      "type": "rapport",
+      "url": "https://citizenlab.ca/2024/02/paperwall-chinese-websites-posing-as-local-news-outlets-with-pro-beijing-content/"
+    },
+    {
+      "titre": "Paperwall: Chinese information operation targets Belgium and Luxembourg (EU DisinfoLab)",
+      "type": "autre",
+      "url": "https://www.disinfo.eu/paperwall-chinese-information-operation-targets-belgium-and-luxembourg/"
+    },
+    {
+      "titre": "Pro-PRC HaiEnergy Information Operations Campaign (Mandiant, rapport initial du 04/08/2022)",
+      "type": "rapport",
+      "url": "https://www.mandiant.com/resources/pro-prc-information-operations-campaign-haienergy"
+    },
+    {
+      "titre": "Pro-PRC HaiEnergy Campaign Exploits U.S. News Outlets via Newswire Services (Mandiant / Google Cloud, suivi 2023)",
+      "type": "rapport",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/pro-prc-haienergy-us-news/"
+    },
+    {
+      "titre": "Page DIOD Wiki - PaperWall",
+      "type": "autre",
+      "url": "https://diod.m82-project.org/index.php/PaperWall"
+    },
+    {
+      "titre": "Pro-PRC influence campaign exposing 18 (puis 38) sites Haimai (NIS Corée du Sud, novembre 2023)",
+      "type": "rapport",
+      "url": "https://www.newsweek.com/china-fake-news-campaign-citizen-lab-network-tencent-1868392"
+    },
+    {
+      "titre": "Uncovering Paperwall, the glocal network of Chinese propaganda (Decode39 / Il Foglio)",
+      "type": "autre",
+      "url": "https://decode39.com/8726/paperwall-china-local-websites-influence-operation/"
+    }
+  ],
+  "mots_cles": [
+    "PaperWall",
+    "Chine",
+    "Haimai",
+    "Shenzhen Haimaiyunxiang",
+    "Times Newswire",
+    "HaiEnergy",
+    "Haixun",
+    "Faux médias locaux",
+    "CitizenLab",
+    "EU DisinfoLab",
+    "Mandiant",
+    "Belgique",
+    "Luxembourg",
+    "Pro-Pékin",
+    "Attaques ad hominem"
+  ],
+  "mots_cles_text": "",
+  "evenements": [
+    {
+      "date": "2022-08-04",
+      "label": "Publication du rapport HaiEnergy initial par Mandiant",
+      "description": "Premier rapport Mandiant (Ryan Serabian, Daniel Zafra) caractérisant l'opération HaiEnergy attribuée à Shanghai Haixun Technology Co., Ltd (Haixun). Documente 72+ sites inauthentiques. PaperWall présentera des similitudes mais sera caractérisé comme une campagne distincte.",
+      "type": "custom"
+    },
+    {
+      "date": "2023-01-01",
+      "label": "Activation présumée de PaperWall",
+      "description": "Date estimée d'activation, sources ouvertes (date approximative).",
+      "type": "start"
+    },
+    {
+      "date": "2024-02-07",
+      "label": "Publication du rapport CitizenLab (No. 174)",
+      "description": "CitizenLab nomme et caractérise PaperWall, attribue à Shenzhen Haimaiyunxiang Media Co. (Haimai). Annonce officielle du 07/02/2024 par CitizenLab via X.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-03-14",
+      "label": "Analyse EU DisinfoLab",
+      "description": "EU DisinfoLab détaille les sites Boic Post (Belgique) et Gaul Journal (Luxembourg) avec analyse du contenu local.",
+      "type": "custom"
+    }
+  ]
+}

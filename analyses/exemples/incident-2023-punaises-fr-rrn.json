@@ -1,0 +1,304 @@
+{
+  "code_operation": "2023-punaises-fr-rrn",
+  "date_creation": "2026-05-08",
+  "date_derniere_maj": "2026-05-08",
+  "statut": "en_cours",
+  "efficacite_estimee": "elevee",
+  "portee_estimee": "elevee",
+  "date_debut": "2023-10-01",
+  "date_fin": "",
+  "commentaires": "Sous-campagne thématique de l'opération Doppelgänger (désignation officielle française : RRN, Reliable Recent News) ciblant la France. La prolifération de punaises de lit à Paris à l'automne 2023, à quelques mois des Jeux olympiques de Paris 2024, est un phénomène sanitaire réel qui a été instrumentalisé par l'opération (la campagne n'a pas créé la psychose, elle l'a amplifiée artificiellement). Les narratifs visaient à discréditer les sanctions occidentales contre la Russie et à stigmatiser les réfugiés ukrainiens. Confirmée et dénoncée publiquement par les services de renseignement français (SGDSN/VIGINUM), par la ministre des Affaires étrangères Catherine Colonna en juin 2023 dans le cadre de la campagne RRN générale, puis spécifiquement par le ministre délégué chargé de l'Europe Jean-Noël Barrot en octobre 2023 sur le volet punaises de lit. Précisions factuelles (audit 2026-05-08) : déclaration officielle de Catherine Colonna le mardi 13 juin 2023 ; rapport technique VIGINUM/SGDSN publié le mercredi 19 juillet 2023. Attribution Meta des sociétés russes Structura National Technologies (alias Struktura) et Social Design Agency (SDA, alias Agentstvo Sotsialnogo Proektirovania ou ASP) datée du 15 décembre 2022.",
+  "attaquants": [
+    {
+      "nom": "Doppelgänger (RRN)",
+      "type": "organisation_privee",
+      "pays_origine": "Russie",
+      "niveau_attribution": "Confirmé",
+      "role_dans_operation": "Opérateur principal",
+      "description": "Réseau d'influence russe identifié dès 2022 par VIGINUM, attribué notamment aux sociétés russes Structura National Technologies (alias Struktura) et Social Design Agency (SDA, alias Agentstvo Sotsialnogo Proektirovania / ASP). Spécialisé dans la création de faux sites usurpant l'identité de médias occidentaux établis. Désignation officielle française : RRN. Wikipédia documente une activité contre Ukraine, Allemagne, France et États-Unis."
+    }
+  ],
+  "cibles": [
+    {
+      "pays": "France",
+      "region": "Territoire national",
+      "description_libre": "Opinion publique française, en particulier les segments inquiets de la prolifération des punaises de lit à Paris à l'automne 2023 (à quelques mois des Jeux olympiques de Paris 2024).",
+      "type_cible": [
+        "Primaire",
+        "Finale"
+      ]
+    }
+  ],
+  "canaux_diffusion": [
+    {
+      "canal": "Faux sites web usurpant des médias",
+      "plateforme": "Sites clones de Liberation.fr et LaMontagne.fr",
+      "ampleur": "Plusieurs faux articles diffusés. La Montagne a démenti à AFP Factuel le 18/10/2023, Libération a démenti via CheckNews le 04/10/2023"
+    },
+    {
+      "canal": "Réseau social",
+      "plateforme": "X (Twitter)",
+      "ampleur": "Amplification par bots et trolls dans le cadre du dispositif Doppelgänger plus large (355 noms de domaine usurpant des médias français détectés par VIGINUM (chiffre cumulé pour l'ensemble de la campagne Doppelgänger France, pas seulement pour le sous-volet punaises))"
+    },
+    {
+      "canal": "Réseau social",
+      "plateforme": "Facebook",
+      "ampleur": "Diffusion via comptes inauthentiques"
+    }
+  ],
+  "relais": [
+    {
+      "nom": "Comptes inauthentiques Doppelgänger",
+      "type": "Bot et automatisé",
+      "role": "Diffusion initiale et amplification",
+      "degre_conscience": "conscient"
+    },
+    {
+      "nom": "Utilisateurs réels piégés par le contenu",
+      "type": "Humain",
+      "role": "Amplification involontaire",
+      "degre_conscience": "inconscient"
+    }
+  ],
+  "techniques": [
+    {
+      "code_disarm": "T0085.003",
+      "nom": "Develop Inauthentic News Articles",
+      "description": "Probable. Création de faux articles de presse imitant Libération et La Montagne sur le thème des punaises de lit."
+    },
+    {
+      "code_disarm": "T0143.003",
+      "nom": "Impersonated Persona",
+      "description": "Probable. Usurpation d'identité de médias établis pour conférer une apparence de crédibilité aux narratifs."
+    },
+    {
+      "code_disarm": "T0097.202",
+      "nom": "News Outlet Persona",
+      "description": "Probable. Mise en scène d'articles présentés comme provenant de médias français reconnus."
+    },
+    {
+      "code_disarm": "T0068",
+      "nom": "Respond to Breaking News Event or Active Crisis",
+      "description": "Probable. Exploitation opportuniste de l'actualité de la psychose autour des punaises de lit à Paris en octobre 2023."
+    },
+    {
+      "code_disarm": "T0023.001",
+      "nom": "Reframe Context",
+      "description": "Probable. Recadrage du sujet sanitaire en attaque géopolitique en liant la prolifération à l'arrêt des livraisons de pesticides russes."
+    },
+    {
+      "code_disarm": "T0079",
+      "nom": "Divide",
+      "description": "Probable. Stigmatisation des réfugiés ukrainiens comme vecteurs de la prolifération."
+    },
+    {
+      "code_disarm": "T0049.003",
+      "nom": "Bots Amplify via Automated Forwarding and Reposting",
+      "description": "Probable. Amplification automatisée caractéristique du dispositif Doppelgänger."
+    },
+    {
+      "code_disarm": "T0049.001",
+      "nom": "Trolls Amplify and Manipulate",
+      "description": "Probable. Amplification par comptes inauthentiques."
+    },
+    {
+      "code_disarm": "T0149.001",
+      "nom": "Domain Asset",
+      "description": "Probable. Enregistrement de domaines clones imitant les URL des médias français."
+    },
+    {
+      "code_disarm": "T0099",
+      "nom": "Prepare Assets Impersonating Legitimate Entities",
+      "description": "Probable. Préparation d'actifs (clones de domaines liberation.lu / liberation.ltd / liberation.wf, lamontagne.* etc.) usurpant l'identité de médias français, technique typosquattage caractéristique de Doppelgänger."
+    },
+    {
+      "code_disarm": "T0098.002",
+      "nom": "Leverage Existing Inauthentic News Sites",
+      "description": "Probable. Exploitation de l'écosystème préexistant de faux sites RRN (Reliable Recent News) déjà identifié par VIGINUM en 2022."
+    },
+    {
+      "code_disarm": "T0084.001",
+      "nom": "Use Copypasta",
+      "description": "Probable. Réplication de captures d'écran de faux articles imitant la charte graphique de Libération et La Montagne, partagées massivement."
+    },
+    {
+      "code_disarm": "T0086.003",
+      "nom": "Deceptively Edit Images (Cheap Fakes)",
+      "description": "Probable. Captures d'écran de faux articles avec esthétique imitée des médias établis, technique cheap fake caractéristique de Doppelgänger."
+    }
+  ],
+  "techniques_dima": [
+    {
+      "code_dima": "TE0121",
+      "nom": "Illusion de la fréquence",
+      "description": "Explicite (DIOD). Répétition du narratif via faux articles et amplification donnent l'impression que le sujet est partout."
+    },
+    {
+      "code_dima": "TE0211",
+      "nom": "Biais de corrélation illusoire",
+      "description": "Explicite (DIOD). Création d'un lien fallacieux entre sanctions anti-russes ou réfugiés ukrainiens et prolifération des punaises."
+    },
+    {
+      "code_dima": "TE0314",
+      "nom": "Effet de suggestion",
+      "description": "Explicite (DIOD). Suggestion que les sanctions occidentales sont la cause directe de la crise sanitaire."
+    },
+    {
+      "code_dima": "TE0321",
+      "nom": "Stéréotype implicite",
+      "description": "Explicite (DIOD). Activation de stéréotypes associant les réfugiés à des nuisances."
+    },
+    {
+      "code_dima": "TE0422",
+      "nom": "Biais d'autorité",
+      "description": "Explicite (DIOD). Usurpation de marques de presse établies pour conférer crédibilité au narratif."
+    },
+    {
+      "code_dima": "TE0132",
+      "nom": "Biais de négativité",
+      "description": "Probable. Exploitation d'un événement sanitaire anxiogène (psychose punaises de lit) pour maximiser l'impact émotionnel."
+    },
+    {
+      "code_dima": "TE0212",
+      "nom": "Biais de la preuve anecdotique",
+      "description": "Probable. Faux articles présentés comme cas particuliers symptomatiques d'une crise causée par les sanctions ou les réfugiés."
+    }
+  ],
+  "formats_contenu": [
+    {
+      "format": "Faux article de presse",
+      "langue": "Français"
+    },
+    {
+      "format": "Capture d'écran d'article",
+      "langue": "Français"
+    },
+    {
+      "format": "Publication réseau social",
+      "langue": "Français"
+    }
+  ],
+  "objectifs": [
+    {
+      "type_objectif": "delegitimation",
+      "description": "Délégitimer les sanctions économiques occidentales contre la Russie en les présentant comme directement préjudiciables au quotidien des Français."
+    },
+    {
+      "type_objectif": "polarisation",
+      "description": "Stigmatiser les réfugiés ukrainiens et fissurer le soutien français à l'Ukraine."
+    },
+    {
+      "type_objectif": "desinformation",
+      "description": "Diffuser des récits factuellement faux sur l'origine de la prolifération des punaises de lit."
+    }
+  ],
+  "narratifs": [
+    {
+      "description": "L'arrêt des livraisons de pesticides russes consécutif aux sanctions occidentales aurait rendu inefficaces les traitements contre les punaises de lit en France.",
+      "veracite": "faux",
+      "themes": [
+        "Sanctions économiques",
+        "Russie",
+        "Santé publique"
+      ]
+    },
+    {
+      "description": "Les réfugiés ukrainiens auraient importé une épidémie de punaises de lit en France (faux article attribué à Libération, daté du 04/10/2023).",
+      "veracite": "faux",
+      "themes": [
+        "Réfugiés",
+        "Ukraine",
+        "Stigmatisation"
+      ]
+    }
+  ],
+  "leviers_psychologiques": [
+    "Principe d'autorité",
+    "Principe de la preuve sociale"
+  ],
+  "documents": [
+    {
+      "titre": "RRN : une campagne numérique de manipulation de l'information complexe et persistante (SGDSN/VIGINUM)",
+      "type": "rapport",
+      "url": "https://www.sgdsn.gouv.fr/publications/maj-19062023-rrn-une-campagne-numerique-de-manipulation-de-linformation-complexe-et"
+    },
+    {
+      "titre": "France : la psychose autour des punaises de lit amplifiée par le Kremlin selon Jean-Noël Barrot (TF1)",
+      "type": "autre",
+      "url": "https://www.tf1info.fr/politique/video-france-la-psychose-autour-des-punaises-de-lit-amplifiee-par-le-kremlin-selon-le-ministre-delegue-charge-de-l-europe-jean-noel-barrot-2287888.html"
+    },
+    {
+      "titre": "Révélations sur Doppelgänger, la campagne de désinformation russe dénoncée par la France (Le Monde)",
+      "type": "article",
+      "url": "https://www.lemonde.fr/pixels/article/2023/06/13/revelations-sur-doppelganger-la-campagne-de-desinformation-russe-denoncee-par-la-france_6177446_4408996.html"
+    },
+    {
+      "titre": "Les punaises de lit, nouvelle arme de propagande russe (JDD)",
+      "type": "article",
+      "url": "https://www.lejdd.fr/international/les-punaises-de-lit-nouvelle-arme-de-propagande-russe-139182"
+    },
+    {
+      "titre": "Non, Libération n'a pas imputé l'invasion de punaises de lit à l'arrivée des réfugiés ukrainiens (CheckNews)",
+      "type": "autre",
+      "url": "https://www.liberation.fr/checknews/non-liberation-na-pas-impute-linvasion-de-punaises-de-lits-a-larrivee-des-refugies-ukrainiens-20231004_VMWAZCSM2JBS7JHVAR5BG44GRY/"
+    },
+    {
+      "titre": "Page DIOD Wiki - Les punaises de lit",
+      "type": "autre",
+      "url": "https://diod.m82-project.org/index.php/Les_punaises_de_lit"
+    },
+    {
+      "titre": "Russian disinformation campaign tied to Putin chief of staff Kirienko (Washington Post, décembre 2023)",
+      "type": "article",
+      "url": "https://www.washingtonpost.com/world/2023/12/16/russia-disinformation-influence-campaign-doppelganger/"
+    }
+  ],
+  "mots_cles": [
+    "Doppelgänger",
+    "RRN",
+    "Punaises de lit",
+    "Russie",
+    "France",
+    "Désinformation",
+    "Sanctions",
+    "Réfugiés ukrainiens",
+    "Faux articles",
+    "Usurpation de médias",
+    "VIGINUM",
+    "Catherine Colonna",
+    "Jean-Noël Barrot"
+  ],
+  "mots_cles_text": "",
+  "evenements": [
+    {
+      "date": "2023-06-13",
+      "label": "Dénonciation initiale RRN par le Quai d'Orsay",
+      "description": "La ministre des Affaires étrangères Catherine Colonna dénonce la campagne RRN/Doppelgänger comme outil russe de manipulation de l'information.",
+      "type": "custom"
+    },
+    {
+      "date": "2023-09-15",
+      "label": "Activation de la sous-campagne thématique punaises",
+      "description": "À partir de la mi-septembre 2023, faux articles et amplification sociale liant la prolifération des punaises aux sanctions et aux réfugiés ukrainiens.",
+      "type": "start"
+    },
+    {
+      "date": "2023-10-04",
+      "label": "Faux article daté Libération et fact-check CheckNews",
+      "description": "Faux article daté du 04/10/2023 imputant la prolifération aux réfugiés ukrainiens. Démenti formel par Libération CheckNews le même jour.",
+      "type": "custom"
+    },
+    {
+      "date": "2023-10-18",
+      "label": "Démenti de La Montagne",
+      "description": "Contactée par AFP Factuel, La Montagne dénonce la contrefaçon imitant son esthétique.",
+      "type": "custom"
+    },
+    {
+      "date": "2023-10-24",
+      "label": "Interview de Jean-Noël Barrot sur TF1",
+      "description": "Le ministre délégué chargé de l'Europe attribue publiquement l'amplification de la psychose au Kremlin. À noter (arbitrage audit 2026-05-08) : la dépêche AFP largement reprise par JDD, Konbini et autres médias est datée du 24/10/2023 ; l'archive vidéo TF1/INA reste à consulter pour confirmer la date exacte de diffusion (24/10 ou 27/10/2023).",
+      "type": "custom"
+    }
+  ]
+}

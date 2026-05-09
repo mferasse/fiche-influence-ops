@@ -1,0 +1,626 @@
+{
+  "code_operation": "2024-roumanie-pres-tiktok",
+  "date_creation": "2026-05-08",
+  "date_derniere_maj": "2026-05-08",
+  "statut": "en_cours",
+  "efficacite_estimee": "tres_elevee",
+  "portee_estimee": "tres_elevee",
+  "date_debut": "2024-11-11",
+  "date_fin": "2024-12-06",
+  "commentaires": "Manipulation informationnelle ayant entouré le premier tour de l'élection présidentielle roumaine de novembre 2024. Călin Georgescu, crédité de moins de 1% d'intentions de vote quatre semaines avant le scrutin, est arrivé en tête avec 22,94% des voix (≈ 2,16 millions de votes) grâce à une campagne quasi exclusivement menée sur TikTok, sans budget déclaré. Selon les notes de renseignement déclassifiées du 4 décembre 2024, la diffusion coordonnée multiplateforme avait débuté en juin 2024 ; le réseau dormant TikTok (largement inactif depuis 2016) a été activé environ deux semaines avant le scrutin (la date 11/11/2024 retenue par DIOD correspond à cette phase d'activation). TikTok a indiqué avoir supprimé environ 66 000 comptes inauthentiques ciblant la Roumanie depuis septembre 2024. La Cour constitutionnelle roumaine a annulé les résultats du scrutin le 6 décembre 2024 (décision n°32, unanime). Le rapport public VIGINUM/SGDSN du 4 février 2025 documente les risques d'extension à la France. Précisions factuelles (audit 2026-05-08) : décision n° 32 de la Cour constitutionnelle du 6 décembre 2024 (vendredi), à l'unanimité, fondée sur l'article 146 f) de la Constitution roumaine. Premier tour de référence : dimanche 24 novembre 2024. Note sur les chiffres : 27 199 comptes inauthentiques recensés par TikTok (Roumanie, AUR + Georgescu) ; 400 000+ comptes spam bloqués par TikTok entre septembre et décembre 2024 ; ≈ 100 influenceurs rémunérés via FA Agency selon le SRI.",
+  "attaquants": [
+    {
+      "nom": "Acteur étatique étranger non identifié publiquement",
+      "type": "etat",
+      "pays_origine": "Russie",
+      "niveau_attribution": "Probable",
+      "role_dans_operation": "Commanditaire suspecté",
+      "description": "Les notes de renseignement roumaines déclassifiées suggèrent l'implication d'un acteur étatique étranger. Le CSAT (28/11/2024) confirme que la Roumanie est devenue une priorité pour les actions hostiles d'acteurs étatiques, en particulier la Fédération de Russie. Les analyses publiques (incluant le rapport VIGINUM) pointent une attribution probable à la Russie sur la base des modes opératoires observés, sans confirmation publique formelle de l'attribution."
+    },
+    {
+      "nom": "Réseau d'influenceurs rémunérés non déclarés",
+      "type": "organisation_privee",
+      "pays_origine": "Inconnu",
+      "niveau_attribution": "Confirmé",
+      "role_dans_operation": "Promotion dissimulée du candidat",
+      "description": "Recours documenté par les autorités roumaines à un réseau d'influenceurs payés via des plateformes intermédiaires sans mention de partenariat politique, en violation des règles de transparence électorale. Méthode initiale : promotion d'un « candidat idéal » non nommé dont le profil correspondait à Georgescu."
+    },
+    {
+      "nom": "FA Agency",
+      "type": "organisation_privee",
+      "pays_origine": "Afrique du Sud",
+      "niveau_attribution": "Confirmé",
+      "role_dans_operation": "Recrutement d'influenceurs",
+      "description": "Entreprise de communication sud-africaine qui contactait par e-mail des influenceurs en proposant une rémunération de 1 000 € par publication, selon le service de renseignement intérieur roumain. Cas documenté dans les notes déclassifiées du 4 décembre 2024."
+    },
+    {
+      "nom": "Bogdan PESCHIR (alias BOGPR sur TikTok)",
+      "type": "individu",
+      "pays_origine": "Roumanie",
+      "niveau_attribution": "Confirmé",
+      "role_dans_operation": "Financement non déclaré",
+      "description": "Citoyen roumain identifié par le SRI comme ayant effectué près d'un million d'euros de dons (jusqu'à 950 € par repost) en faveur de la candidature Georgescu via TikTok. TikTok a confirmé avoir reçu 362 500 € de cette personne. Susceptible d'être qualifié de financement de campagne politique en violation de la législation électorale roumaine."
+    },
+    {
+      "nom": "Gambling Media Group (GMG) / Zlodeï",
+      "type": "organisation_privee",
+      "pays_origine": "Pologne (GMG branche polonaise) / Ukraine (Zlodeï)",
+      "niveau_attribution": "Probable",
+      "role_dans_operation": "Réseau d'agences en cascade derrière FA Agency",
+      "description": "Selon Le Monde (6 et 13 décembre 2024), FA Agency serait gérée en arrière-plan par la branche polonaise de Gambling Media Group (GMG), elle-même liée à l'agence ukrainienne Zlodeï. Schéma classique de société écran en cascade pour dissimuler l'origine des fonds."
+    }
+  ],
+  "cibles": [
+    {
+      "pays": "Roumanie",
+      "region": "Territoire national",
+      "description_libre": "Électorat roumain, en particulier les jeunes utilisateurs de TikTok, segments politiquement insatisfaits ou indécis.",
+      "type_cible": [
+        "Primaire",
+        "Finale"
+      ]
+    },
+    {
+      "pays": "France",
+      "region": "Territoire national",
+      "description_libre": "Cible secondaire identifiée par le rapport VIGINUM : risques d'extension du même mode opératoire aux scrutins français.",
+      "type_cible": [
+        "Secondaire"
+      ]
+    },
+    {
+      "pays": "Union européenne",
+      "region": "Flanc oriental de l'OTAN",
+      "description_libre": "Cible élargie identifiée par le CSAT roumain : pays du flanc oriental devenus priorité pour les actions hostiles.",
+      "type_cible": [
+        "Secondaire"
+      ]
+    }
+  ],
+  "canaux_diffusion": [
+    {
+      "canal": "Plateforme vidéo et réseau social",
+      "plateforme": "TikTok",
+      "ampleur": "Plateforme principale, exposition massive (vues et abonnés du compte Georgescu multipliés par trois entre le 10 et le 24 novembre 2024). 66 000 comptes inauthentiques supprimés par TikTok depuis sept. 2024."
+    },
+    {
+      "canal": "Réseau social",
+      "plateforme": "Telegram",
+      "ampleur": "Coordination et amplification"
+    },
+    {
+      "canal": "Réseau social",
+      "plateforme": "Facebook",
+      "ampleur": "Diffusion secondaire dans le cadre de la diffusion coordonnée multiplateforme"
+    },
+    {
+      "canal": "Plateforme vidéo",
+      "plateforme": "YouTube",
+      "ampleur": "Diffusion de contenus politiques relayés"
+    },
+    {
+      "canal": "Réseau social",
+      "plateforme": "Instagram",
+      "ampleur": "Diffusion secondaire"
+    },
+    {
+      "canal": "Messagerie",
+      "plateforme": "WhatsApp",
+      "ampleur": "Diffusion virale entre cercles privés"
+    },
+    {
+      "canal": "Plateforme d'influence marketing",
+      "plateforme": "FameUp",
+      "ampleur": "Plateforme reliant marques et influenceurs, utilisée pour la coordination"
+    }
+  ],
+  "relais": [
+    {
+      "nom": "Influenceurs TikTok rémunérés",
+      "type": "Humain",
+      "role": "Promotion dissimulée du candidat",
+      "degre_conscience": "conscient"
+    },
+    {
+      "nom": "Comptes inauthentiques et bots TikTok",
+      "type": "Bot et automatisé",
+      "role": "Amplification algorithmique et flood de hashtags",
+      "degre_conscience": "conscient"
+    },
+    {
+      "nom": "Communautés organiques sympathisantes",
+      "type": "Humain",
+      "role": "Relai idéologique et viralisation",
+      "degre_conscience": "semi-conscient"
+    },
+    {
+      "nom": "Réseau dormant TikTok (depuis 2016)",
+      "type": "Humain et automatisé",
+      "role": "Réseau largement inactif depuis 2016 réactivé deux semaines avant le scrutin",
+      "degre_conscience": "conscient"
+    }
+  ],
+  "techniques": [
+    {
+      "code_disarm": "T0074.001",
+      "nom": "Geopolitical Advantage",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0073",
+      "nom": "Determine Target Audiences",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0136.004",
+      "nom": "Boost Reputation",
+      "description": "Explicite (DIOD). Élévation artificielle du profil du candidat Georgescu."
+    },
+    {
+      "code_disarm": "T0136.006",
+      "nom": "Cultivate Support for Ally",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0138.001",
+      "nom": "Encourage",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0081.007",
+      "nom": "Identify Target Audience Adversaries",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0080.005",
+      "nom": "Assess Degree/Type of Media Access",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0080.003",
+      "nom": "Identify Trending Topics/Hashtags",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0080.001",
+      "nom": "Monitor Social Media Analytics",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0072.005",
+      "nom": "Political Segmentation",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0003",
+      "nom": "Leverage Existing Narratives",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0015.002",
+      "nom": "Create New Hashtag",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0015.001",
+      "nom": "Use Existing Hashtag",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0087",
+      "nom": "Develop Video-Based Content",
+      "description": "Explicite (DIOD). Format vidéo court typique de TikTok."
+    },
+    {
+      "code_disarm": "T0084.002",
+      "nom": "Plagiarise Content",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0084.001",
+      "nom": "Use Copypasta",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0146.004",
+      "nom": "Administrator Account Asset",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0146.007",
+      "nom": "Automated Account Asset",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0146.002",
+      "nom": "Paid Account Asset",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0150.008",
+      "nom": "Bulk Created Asset",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0150.003",
+      "nom": "Pre-Existing Asset",
+      "description": "Explicite (DIOD). Réseau dormant depuis 2016, réactivé deux semaines avant le scrutin."
+    },
+    {
+      "code_disarm": "T0150.006",
+      "nom": "Purchased Asset",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0092.003",
+      "nom": "Create Community or Sub-Group",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0096.001",
+      "nom": "Create Content Farms",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0096.002",
+      "nom": "Outsource Content Creation to External Organisations",
+      "description": "Explicite (DIOD). Recours à FA Agency (Afrique du Sud) pour le recrutement d'influenceurs."
+    },
+    {
+      "code_disarm": "T0149.001",
+      "nom": "Domain Asset",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0100.003",
+      "nom": "Co-Opt Influencers",
+      "description": "Explicite (DIOD). Recours dissimulé à des influenceurs pour propagande électorale (rémunération 1 000 €/post via FA Agency)."
+    },
+    {
+      "code_disarm": "T0143.002",
+      "nom": "Fabricated Persona",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0097.205",
+      "nom": "Business Persona",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0102.001",
+      "nom": "Use Existing Echo Chambers/Filter Bubbles",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0151.014",
+      "nom": "Comments Section",
+      "description": "Explicite (DIOD). Inondation des sections commentaires des autres candidats avec des messages favorables à Georgescu."
+    },
+    {
+      "code_disarm": "T0151.001",
+      "nom": "Social Media Platform",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0153.006",
+      "nom": "Content Recommendation Algorithm",
+      "description": "Explicite (DIOD). Manipulation de l'algorithme de recommandation TikTok via commentaires massifs ; reconnu par TikTok comme une « campagne de guérilla politique de masse »."
+    },
+    {
+      "code_disarm": "T0152.006",
+      "nom": "Video Platform",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0116.001",
+      "nom": "Post Inauthentic Social Media Comment",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0039",
+      "nom": "Bait Influencer",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0119.001",
+      "nom": "Post across Groups",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0049.003",
+      "nom": "Bots Amplify via Automated Forwarding and Reposting",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0049.002",
+      "nom": "Flood Existing Hashtag",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0049.001",
+      "nom": "Trolls Amplify and Manipulate",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0126.001",
+      "nom": "Call to Action to Attend",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0128.002",
+      "nom": "Conceal Network Identity",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0130.001",
+      "nom": "Conceal Sponsorship",
+      "description": "Explicite (DIOD). Dissimulation des partenariats rémunérés (TikTok partenariats politiques non déclarés)."
+    },
+    {
+      "code_disarm": "T0130.003",
+      "nom": "Use Shell Organisations",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0133.001",
+      "nom": "Behaviour Changes",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0134.001",
+      "nom": "Message Reach",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0134.002",
+      "nom": "Social Media Engagement",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0114",
+      "nom": "Deliver Ads",
+      "description": "Probable. Achat publicitaire dissimulé sur TikTok via partenariats commerciaux non déclarés (rémunération influenceurs via FA Agency / GMG)."
+    },
+    {
+      "code_disarm": "T0097.108",
+      "nom": "Astroturfing Persona",
+      "description": "Explicite. Création d'une apparence de soutien populaire spontané au candidat Georgescu, alors que le mouvement est artificiellement amplifié."
+    },
+    {
+      "code_disarm": "T0086.003",
+      "nom": "Deceptively Edit Images (Cheap Fakes)",
+      "description": "Probable. Manipulation visuelle (légères modifications de vidéos identiques) pour échapper aux systèmes de détection de duplicata de TikTok et maximiser la portée."
+    }
+  ],
+  "techniques_dima": [
+    {
+      "code_dima": "TE0121",
+      "nom": "Illusion de la fréquence",
+      "description": "Probable. Saturation de l'environnement informationnel TikTok par le contenu pro-Georgescu."
+    },
+    {
+      "code_dima": "TE0331",
+      "nom": "Effet de récence",
+      "description": "Probable. Pic de visibilité dans les semaines précédant immédiatement le scrutin."
+    },
+    {
+      "code_dima": "TE0332",
+      "nom": "Effet de simple exposition",
+      "description": "Probable. Multiplication des expositions répétées au candidat sur l'algorithme."
+    },
+    {
+      "code_dima": "TE0422",
+      "nom": "Biais d'autorité",
+      "description": "Probable. Recours à des influenceurs perçus comme autorités sociales."
+    },
+    {
+      "code_dima": "TE0251",
+      "nom": "Effet de faux consensus",
+      "description": "Probable. Création artificielle d'une apparence de consensus pro-Georgescu via amplification."
+    },
+    {
+      "code_dima": "TE0211",
+      "nom": "Biais de corrélation illusoire",
+      "description": "Probable. Création d'une corrélation fallacieuse entre engouement perçu en commentaires et soutien populaire réel."
+    },
+    {
+      "code_dima": "TE0212",
+      "nom": "Biais de la preuve anecdotique",
+      "description": "Probable. Commentaires sous vidéos présentés comme preuves anecdotiques d'un soutien massif."
+    },
+    {
+      "code_dima": "TE0411",
+      "nom": "Excès de confiance",
+      "description": "Probable. Engouement viral artificiel induit chez l'utilisateur une surestimation de la fiabilité du candidat et de la dynamique."
+    }
+  ],
+  "formats_contenu": [
+    {
+      "format": "Vidéo courte",
+      "langue": "Roumain"
+    },
+    {
+      "format": "Hashtag campaign",
+      "langue": "Roumain"
+    },
+    {
+      "format": "Commentaire ou réponse",
+      "langue": "Roumain"
+    }
+  ],
+  "objectifs": [
+    {
+      "type_objectif": "soutien_politique",
+      "description": "Assurer une percée électorale du candidat Georgescu au premier tour."
+    },
+    {
+      "type_objectif": "perturbation",
+      "description": "Perturber le déroulement régulier du processus électoral roumain."
+    },
+    {
+      "type_objectif": "polarisation",
+      "description": "Approfondir le clivage anti-establishment et anti-Union européenne au sein de l'électorat."
+    },
+    {
+      "type_objectif": "delegitimation",
+      "description": "Affaiblir la confiance dans les institutions électorales et les partis traditionnels."
+    }
+  ],
+  "narratifs": [
+    {
+      "description": "Călin Georgescu serait un candidat authentique et indépendant, porteur d'une dynamique populaire spontanée.",
+      "veracite": "trompeur",
+      "themes": [
+        "Anti-establishment",
+        "Authenticité"
+      ]
+    },
+    {
+      "description": "Narratifs souverainistes, anti-OTAN et anti-soutien à l'Ukraine présentés comme l'expression majoritaire des Roumains.",
+      "veracite": "trompeur",
+      "themes": [
+        "Souverainisme",
+        "OTAN",
+        "Ukraine"
+      ]
+    }
+  ],
+  "leviers_psychologiques": [
+    "Principe de la preuve sociale",
+    "Principe d'autorité",
+    "Principe de sympathie"
+  ],
+  "documents": [
+    {
+      "titre": "Élections présidentielles roumaines 2024 : risques pour la France (rapport public SGDSN/VIGINUM)",
+      "type": "rapport",
+      "url": "https://www.sgdsn.gouv.fr/files/files/Publications/20250204_NP_SGDSN_VIGINUM_Rapport_public_Elections_roumanie_risques_france_VFF.pdf"
+    },
+    {
+      "titre": "Documents déclassifiés du Conseil Suprême de la Défense (CSAT) - communiqué présidentiel",
+      "type": "rapport",
+      "url": "https://www.presidency.ro/ro/media/comunicat-de-presa1733327193"
+    },
+    {
+      "titre": "L'annulation des résultats du premier tour des élections présidentielles roumaines par la Cour constitutionnelle (JusPoliticum)",
+      "type": "autre",
+      "url": "https://blog.juspoliticum.com/2024/12/10/lannulation-des-resultats-du-premier-tour-des-elections-presidentielles-roumaines-par-la-cour-constitutionnelle-un-coup-detat-par-thomas-andreu/"
+    },
+    {
+      "titre": "Page DIOD Wiki - Elections roumaines 2024",
+      "type": "autre",
+      "url": "https://diod.m82-project.org/index.php/Elections_roumaines_2024"
+    },
+    {
+      "titre": "Cyber-ingérence : les leçons de l'épopée du candidat TikTok en Roumanie (The Conversation)",
+      "type": "autre",
+      "url": "https://theconversation.com/cyber-ingerence-les-lecons-de-lepopee-du-candidat-tiktok-en-roumanie-246003"
+    },
+    {
+      "titre": "L'élection présidentielle annulée en Roumanie en raison d'une campagne massive de manipulations sur TikTok (IREDIC)",
+      "type": "autre",
+      "url": "https://iredic.fr/2024/12/30/lelection-presidentielle-annulee-en-roumanie-en-raison-dune-campagne-massive-de-manipulations-sur-tiktok/"
+    },
+    {
+      "titre": "La démocratie à l'heure des réseaux sociaux : TikTok mis en cause après l'annulation de l'élection présidentielle en Roumanie (Fondation Descartes)",
+      "type": "autre",
+      "url": "https://www.fondationdescartes.org/2025/01/la-democratie-a-lheure-des-reseaux-sociaux-tiktok-mis-en-cause-apres-lannulation-de-lelection-presidentielle-en-roumanie/"
+    }
+  ],
+  "mots_cles": [
+    "Roumanie",
+    "Georgescu",
+    "TikTok",
+    "Élection présidentielle",
+    "Annulation",
+    "Cour constitutionnelle",
+    "Influenceurs",
+    "Algorithme",
+    "VIGINUM",
+    "Russie",
+    "CSAT",
+    "PESCHIR",
+    "FA Agency"
+  ],
+  "mots_cles_text": "",
+  "evenements": [
+    {
+      "date": "2024-06-01",
+      "label": "Début de la diffusion coordonnée multiplateforme",
+      "description": "Selon les notes déclassifiées du SRI, la diffusion coordonnée sur plusieurs plateformes débute en juin 2024.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-10-01",
+      "label": "Dépôt de candidature de Călin Georgescu",
+      "description": "Sans budget de campagne déclaré.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-11-10",
+      "label": "Activation du réseau dormant TikTok",
+      "description": "Réseau de comptes largement inactif depuis 2016 réactivé environ deux semaines avant le scrutin.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-11-11",
+      "label": "Lancement de la campagne intense (DIOD)",
+      "description": "Date de référence retenue par DIOD pour le lancement de l'opération visible.",
+      "type": "start"
+    },
+    {
+      "date": "2024-11-21",
+      "label": "Sondages : Georgescu à 10,6% d'intentions de vote",
+      "description": "Hausse spectaculaire par rapport aux moins de 1% quatre semaines plus tôt (mesure entre les 20 et 21 novembre).",
+      "type": "custom"
+    },
+    {
+      "date": "2024-11-24",
+      "label": "Premier tour de l'élection présidentielle",
+      "description": "Călin Georgescu arrive en tête avec 22,94% des voix (≈ 2,16 millions de votes). Elena Lasconi (USR) qualifiée en deuxième position avec 19,18%.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-11-26",
+      "label": "Annonce officielle des résultats par le BEC",
+      "description": "Le Bureau Électoral Central confirme officiellement les résultats.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-11-28",
+      "label": "Réunion du Conseil Suprême de la Défense (CSAT)",
+      "description": "Le CSAT établit que Georgescu a bénéficié d'une exposition massive et d'un traitement préférentiel sur TikTok. Il identifie la Roumanie comme cible prioritaire d'acteurs étatiques hostiles, en particulier la Fédération de Russie.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-12-04",
+      "label": "Déclassification des notes de renseignement",
+      "description": "Le président Klaus Iohannis rend publics 5 rapports déclassifiés des services de renseignement (SRI, SIE, STS, DIPI) faisant état de manipulations sur TikTok et de l'implication d'un acteur étatique étranger.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-12-05",
+      "label": "Mesure de gel TikTok par la Commission européenne",
+      "description": "Henna Virkkunen (Commission européenne) ordonne à TikTok de geler et conserver toutes les données liées aux élections roumaines et aux prochaines élections dans l'UE.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-12-06",
+      "label": "Annulation des résultats par la Cour constitutionnelle",
+      "description": "La Cour constitutionnelle roumaine annule à l'unanimité le premier tour (décision n°32). Le processus électoral est repris dans son intégralité.",
+      "type": "end"
+    },
+    {
+      "date": "2025-02-04",
+      "label": "Publication du rapport public VIGINUM",
+      "description": "Le SGDSN/VIGINUM publie un rapport sur les risques d'extension à la France.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-12-17",
+      "label": "Ouverture procédure formelle DSA contre TikTok",
+      "description": "La Commission européenne ouvre une procédure formelle contre TikTok au titre du Digital Services Act (DSA), notamment sur la gestion des risques pour les processus électoraux et le pluralisme des médias.",
+      "type": "custom"
+    }
+  ]
+}

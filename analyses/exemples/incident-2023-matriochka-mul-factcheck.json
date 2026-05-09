@@ -1,0 +1,551 @@
+{
+  "code_operation": "2023-matriochka-mul-factcheck",
+  "date_creation": "2026-05-08",
+  "date_derniere_maj": "2026-05-08",
+  "statut": "en_cours",
+  "efficacite_estimee": "moyenne",
+  "portee_estimee": "elevee",
+  "date_debut": "2023-09-01",
+  "date_fin": "",
+  "commentaires": "Mode opératoire identifié et nommé Matriochka (du russe pour poupées gigognes) par le collectif Antibot4Navalny, actif sur X depuis 2018 et qui traque les bots ukrainiens et russes. Documenté par AFP et Bot Blocker dès janvier 2024 puis par VIGINUM dans son rapport du 10 juin 2024. Actif depuis au moins septembre 2023, le mode opératoire repose sur la diffusion coordonnée de faux contenus (reportages, graffitis, mèmes, vidéos) dans les espaces réponses des publications de comptes X de médias, personnalités et cellules de fact-checking dans plus de 60 pays. Architecture opérationnelle documentée par VIGINUM : 2-3 « seeders » publient le contenu sur X dans un intervalle court, suivis 30 à 40 minutes plus tard par 2-3 « quoters » qui partagent les posts en interpellant les cibles (un compte devenant successivement quoter puis seeder). VIGINUM a recensé au moins 90 manœuvres successives et plus de 500 comptes X ciblés. La majorité des contenus a été préalablement publiée par trois chaînes Telegram russes principales (@sheyhtamir1974, @belshkarvka, @thehandofkremlin) déjà identifiées dans des manœuvres informationnelles. Wikipédia documente la réutilisation des mêmes bots que l'opération Doppelgänger. Précision factuelle (audit 2026-05-08) : le mode opératoire est désigné Matriochka par le collectif Antibot4Navalny, et Overload par CheckFirst/Reset. Convergence opérationnelle documentée avec Doppelgänger (mêmes bots) et l'écosystème Pravda/Portal Kombat.",
+  "attaquants": [
+    {
+      "nom": "Matriochka",
+      "type": "organisation_privee",
+      "pays_origine": "Russie",
+      "niveau_attribution": "Confirmé",
+      "role_dans_operation": "Opérateur principal",
+      "description": "Réseau d'influence russe dont l'objectif probable, selon VIGINUM, est de décrédibiliser les médias, personnalités et cellules de fact-checking ciblés tout en promouvant des contenus servant les intérêts russes. Forte intrication avec l'écosystème Telegram pro-russe. Réunit selon VIGINUM les critères d'une ingérence numérique étrangère et est susceptible de porter directement atteinte aux intérêts fondamentaux de la Nation française."
+    }
+  ],
+  "cibles": [
+    {
+      "pays": "Multi-pays",
+      "region": "Plus de 60 pays (Europe, Amérique du Nord)",
+      "description_libre": "Cellules de fact-checking, journalistes, médias et personnalités publiques nord-américains et européens, dont français.",
+      "type_cible": [
+        "Primaire"
+      ]
+    },
+    {
+      "pays": "France",
+      "region": "Médias français spécifiquement",
+      "description_libre": "Médias français cibles documentés : France 24, RFI, Le Monde, Le Figaro. Politique française de soutien à l'Ukraine, certaines personnalités politiques françaises (incluant l'image du président Emmanuel Macron), Banque de France et DGSI (cas usurpation 07/02/2024). Cibles nominales documentées par VIGINUM : entités françaises Le Parisien, Le Monde, Le Figaro, BFMTV, Libération, La Montagne ; institutions Banque de France, DGSI, Ville de Paris.",
+      "type_cible": [
+        "Primaire"
+      ]
+    },
+    {
+      "pays": "France",
+      "region": "Jeux Olympiques et Paralympiques de Paris 2024",
+      "description_libre": "JOP24 ciblés pour diffuser l'idée que les Jeux seront un échec, auprès d'audiences françaises et internationales.",
+      "type_cible": [
+        "Primaire"
+      ]
+    },
+    {
+      "pays": "Multi-pays",
+      "region": "Audiences occidentales",
+      "description_libre": "Audiences occidentales exposées au phénomène, ciblées indirectement par érosion de la confiance dans le fact-checking et lassitude à l'égard de l'Ukraine.",
+      "type_cible": [
+        "Finale"
+      ]
+    },
+    {
+      "pays": "Multi-pays",
+      "region": "Communauté internationale du fact-checking",
+      "description_libre": "Cibles nominales : AFP, BBC, USA Today, France 24 (Info ou Intox), EU DisinfoLab, Fact Check Bulgaria. Personnalités : Christo Grozev (Bellingcat), Alexandre Alaphilippe (EU DisinfoLab), Julian Röpcke (Bild).",
+      "type_cible": [
+        "Primaire"
+      ]
+    }
+  ],
+  "canaux_diffusion": [
+    {
+      "canal": "Réseau social",
+      "plateforme": "X (Twitter)",
+      "ampleur": "Plateforme principale d'interpellation des cibles. Au moins 90 manœuvres successives recensées par VIGINUM, plus de 500 comptes X ciblés depuis septembre 2023."
+    },
+    {
+      "canal": "Messagerie",
+      "plateforme": "Email",
+      "ampleur": "Sollicitation directe de fact-checkeurs et de médias"
+    },
+    {
+      "canal": "Messagerie",
+      "plateforme": "Telegram (chaînes russophones)",
+      "ampleur": "Source amont des contenus. Trois chaînes principales identifiées par VIGINUM : @sheyhtamir1974, @belshkarvka, @thehandofkremlin. Augmentation documentée du volume de faux contenus depuis septembre 2023."
+    }
+  ],
+  "relais": [
+    {
+      "nom": "Comptes X seeders et quoters",
+      "type": "Humain (gestion manuelle coordonnée)",
+      "role": "Diffusion coordonnée. Architecture seeder (publication initiale) puis quoter (interpellation des cibles 30-40 min après, intervalle moyen de 45 sec entre quotes). Un compte alterne entre les deux rôles d'une opération à l'autre.",
+      "degre_conscience": "conscient"
+    },
+    {
+      "nom": "Comptes X achetés à WebMasterMarket",
+      "type": "Humain (comptes commercialisés)",
+      "role": "Comptes X achetés entre septembre 2023 et février 2024 auprès de l'entreprise WebMasterMarket (commercialisation de comptes X). Photos de profil générées numériquement, sans biographie ni localisation, sans abonnés.",
+      "degre_conscience": "conscient"
+    },
+    {
+      "nom": "Chaînes Telegram pro-russes",
+      "type": "Humain",
+      "role": "Source amont des faux contenus, écosystème pro-russe identifié",
+      "degre_conscience": "conscient"
+    },
+    {
+      "nom": "Fact-checkeurs cibles",
+      "type": "Humain",
+      "role": "Relai involontaire par le travail de vérification, contribuant à la diffusion du faux qu'ils dénoncent",
+      "degre_conscience": "inconscient"
+    }
+  ],
+  "techniques": [
+    {
+      "code_disarm": "T0074.001",
+      "nom": "Geopolitical Advantage",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0066",
+      "nom": "Degrade Adversary",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0075.001",
+      "nom": "Discredit Credible Sources",
+      "description": "Explicite (DIOD). Décrédibilisation des fact-checkeurs et médias par usurpation et instrumentalisation."
+    },
+    {
+      "code_disarm": "T0076",
+      "nom": "Distort",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0077",
+      "nom": "Distract",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0079",
+      "nom": "Divide",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0081.005",
+      "nom": "Identify Existing Conspiracy Narratives/Suspicions",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0081.004",
+      "nom": "Identify Existing Fissures",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0081.003",
+      "nom": "Identify Existing Prejudices",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0081.008",
+      "nom": "Identify Media System Vulnerabilities",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0072.001",
+      "nom": "Geographic Segmentation",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0040",
+      "nom": "Demand Insurmountable Proof",
+      "description": "Explicite (DIOD). Demande de preuves auprès des fact-checkeurs comme outil de submersion."
+    },
+    {
+      "code_disarm": "T0004",
+      "nom": "Develop Competing Narratives",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0083",
+      "nom": "Integrate Target Audience Vulnerabilities into Narrative",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0022.001",
+      "nom": "Amplify Existing Conspiracy Theory Narratives",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0022.002",
+      "nom": "Develop Original Conspiracy Theory Narratives",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0003",
+      "nom": "Leverage Existing Narratives",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0068",
+      "nom": "Respond to Breaking News Event or Active Crisis",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0086.003",
+      "nom": "Deceptively Edit Images (Cheap Fakes)",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0085.003",
+      "nom": "Develop Inauthentic News Articles",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0087.002",
+      "nom": "Deceptively Edit Video (Cheap Fakes)",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0023.002",
+      "nom": "Edit Open-Source Content",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0023.001",
+      "nom": "Reframe Context",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0084.003",
+      "nom": "Deceptively Labelled or Translated",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0084.002",
+      "nom": "Plagiarise Content",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0150.001",
+      "nom": "Newly Created Asset",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0143.003",
+      "nom": "Impersonated Persona",
+      "description": "Explicite (DIOD). Usurpation systématique de personnalités, médias et institutions (Banque de France, DGSI, GUD)."
+    },
+    {
+      "code_disarm": "T0097.206",
+      "nom": "Government Institution Persona",
+      "description": "Explicite (DIOD). Usurpation institutionnelle (DGSI, Banque de France)."
+    },
+    {
+      "code_disarm": "T0097.100",
+      "nom": "Individual Persona",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0097.200",
+      "nom": "Institutional Persona",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0097.202",
+      "nom": "News Outlet Persona",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0151.001",
+      "nom": "Social Media Platform",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0153.001",
+      "nom": "Email Platform",
+      "description": "Explicite (DIOD). Sollicitation directe par email."
+    },
+    {
+      "code_disarm": "T0045",
+      "nom": "Use Fake Experts",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0116",
+      "nom": "Comment or Reply on Content",
+      "description": "Explicite (DIOD). Mécanisme central de l'opération : interpellation dans les espaces réponses."
+    },
+    {
+      "code_disarm": "T0115",
+      "nom": "Post Content",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0039",
+      "nom": "Bait Influencer",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0128.004",
+      "nom": "Launder Information Assets",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0128.001",
+      "nom": "Use Pseudonyms",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0129.002",
+      "nom": "Generate Content Unrelated to Narrative",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0133.005",
+      "nom": "Action/Attitude",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0132.001",
+      "nom": "People Focused",
+      "description": "Explicite (DIOD)."
+    },
+    {
+      "code_disarm": "T0049.008",
+      "nom": "Generate Information Pollution",
+      "description": "Explicite. Saturation des cellules de fact-checking par un volume coordonné de sollicitations, identifiée comme objectif opérationnel par VIGINUM."
+    },
+    {
+      "code_disarm": "T0049.003",
+      "nom": "Bots Amplify via Automated Forwarding and Reposting",
+      "description": "Explicite. Amplification automatisée caractéristique de l'architecture seeders/quoters documentée par VIGINUM."
+    }
+  ],
+  "techniques_dima": [
+    {
+      "code_dima": "TE0121",
+      "nom": "Illusion de la fréquence",
+      "description": "Probable. Réplication massive des sollicitations crée une apparence de fréquence du sujet."
+    },
+    {
+      "code_dima": "TE0211",
+      "nom": "Biais de corrélation illusoire",
+      "description": "Probable."
+    },
+    {
+      "code_dima": "TE0314",
+      "nom": "Effet de suggestion",
+      "description": "Probable. Suggestion implicite qu'un sujet vaut investigation par sa simple répétition."
+    },
+    {
+      "code_dima": "TE0433",
+      "nom": "Saturation informationnelle",
+      "description": "Probable. Saturation des cellules de fact-checking par le volume des sollicitations."
+    },
+    {
+      "code_dima": "TE0422",
+      "nom": "Biais d'autorité",
+      "description": "Probable. Usurpation de personnalités et médias établis."
+    },
+    {
+      "code_dima": "TE0312",
+      "nom": "Confusion de source",
+      "description": "Probable. Cible cognitive essentielle de l'opération : provoquer la confusion sur l'origine des contenus relayés par les fact-checkeurs."
+    },
+    {
+      "code_dima": "TE0231",
+      "nom": "Biais d'homogénéité",
+      "description": "Probable. Construction d'une apparence d'unanimité d'interrogations légitimes par démultiplication des comptes seeders/quoters."
+    }
+  ],
+  "formats_contenu": [
+    {
+      "format": "Faux article de presse",
+      "langue": "Multi-langue"
+    },
+    {
+      "format": "Image et mème",
+      "langue": "Multi-langue"
+    },
+    {
+      "format": "Faux graffiti (photographies)",
+      "langue": "Multi-langue"
+    },
+    {
+      "format": "Vidéo courte",
+      "langue": "Multi-langue"
+    },
+    {
+      "format": "Email de sollicitation",
+      "langue": "Multi-langue"
+    },
+    {
+      "format": "Faux montage attribué à un tiers (false flag)",
+      "langue": "Français"
+    }
+  ],
+  "objectifs": [
+    {
+      "type_objectif": "delegitimation",
+      "description": "Décrédibiliser les médias, personnalités et cellules de fact-checking ciblés (objectif explicite identifié par VIGINUM)."
+    },
+    {
+      "type_objectif": "desinformation",
+      "description": "Promouvoir des contenus servant les intérêts russes en les blanchissant via le détour de l'instrumentalisation des fact-checkeurs."
+    },
+    {
+      "type_objectif": "perturbation",
+      "description": "Submerger les capacités de vérification par un volume coordonné de sollicitations, mener à la lassitude des populations occidentales à l'égard de l'Ukraine."
+    },
+    {
+      "type_objectif": "polarisation",
+      "description": "Saper le soutien occidental à l'Ukraine et ternir l'image internationale de la France."
+    }
+  ],
+  "narratifs": [
+    {
+      "description": "Faux contenus présentés comme attribuables à des personnalités ou médias occidentaux, principalement nord-américains et européens (incluant France 24, RFI, Le Monde, Le Figaro).",
+      "veracite": "faux",
+      "themes": [
+        "Usurpation d'identité",
+        "Médias",
+        "Personnalités publiques"
+      ]
+    },
+    {
+      "description": "Sollicitation prétendant solliciter le fact-check d'un contenu, en réalité conçue pour amplifier la diffusion du faux.",
+      "veracite": "trompeur",
+      "themes": [
+        "Instrumentalisation du fact-checking"
+      ]
+    },
+    {
+      "description": "Narratifs majoritairement anti-ukrainiens : barbarie supposée des forces armées ukrainiennes, idéologie néo-nazie attribuée aux dirigeants ukrainiens, lassitude à l'égard de l'Ukraine.",
+      "veracite": "faux",
+      "themes": [
+        "Ukraine",
+        "Anti-Ukraine",
+        "Soutien occidental"
+      ]
+    },
+    {
+      "description": "Les Jeux Olympiques et Paralympiques de Paris 2024 seront un échec.",
+      "veracite": "trompeur",
+      "themes": [
+        "JOP24",
+        "France",
+        "Image internationale"
+      ]
+    },
+    {
+      "description": "Vidéo (07/02/2024) présentée comme un montage du Groupe Union Défense (GUD, organisation étudiante française d'extrême droite) menaçant de « brûler la Banque de France » au motif que celle-ci mentirait sur sa solvabilité. False flag s'inscrivant dans une manœuvre plus large d'usurpation de la Banque de France et de la DGSI invitant la population à retirer massivement des liquidités.",
+      "veracite": "faux",
+      "themes": [
+        "Banque de France",
+        "DGSI",
+        "False flag",
+        "GUD",
+        "Panique bancaire"
+      ]
+    },
+    {
+      "description": "Usurpations ciblant l'image du président de la République française Emmanuel Macron à des fins de désinformation.",
+      "veracite": "trompeur",
+      "themes": [
+        "Macron",
+        "Présidence",
+        "Usurpation"
+      ]
+    }
+  ],
+  "leviers_psychologiques": [
+    "Principe d'autorité",
+    "Principe de cohérence",
+    "Principe de la preuve sociale"
+  ],
+  "documents": [
+    {
+      "titre": "Matriochka : un mode opératoire informationnel pro-russe ciblant les médias et la communauté des fact-checkers (rapport public SGDSN/VIGINUM)",
+      "type": "rapport",
+      "url": "https://www.sgdsn.gouv.fr/files/files/20240610_NP_SGDSN_VIGINUM_Matriochka_VD.pdf"
+    },
+    {
+      "titre": "Matryoshka : A pro-Russian campaign targeting media and the fact-checking community (English version, SGDSN/VIGINUM)",
+      "type": "rapport",
+      "url": "https://www.sgdsn.gouv.fr/files/files/20240611_NP_SGDSN_VIGINUM_Matriochka_EN_VF.pdf"
+    },
+    {
+      "titre": "Opération Matriochka : la campagne prorusse contre la communauté des fact-checkeurs s'intensifie (France 24 Observers)",
+      "type": "article",
+      "url": "https://observers.france24.com/fr/europe/20240610-op%C3%A9ration-matriochka-la-campagne-prorusse-contre-la-communaut%C3%A9-des-fact-checkeurs-s-intensifie"
+    },
+    {
+      "titre": "Page DIOD Wiki - Matriochka",
+      "type": "autre",
+      "url": "https://diod.m82-project.org/index.php/Matriochka"
+    }
+  ],
+  "mots_cles": [
+    "Matriochka",
+    "Matryoshka",
+    "Russie",
+    "Fact-checking",
+    "X (Twitter)",
+    "Telegram",
+    "Usurpation",
+    "VIGINUM",
+    "Décrédibilisation",
+    "Faux contenus",
+    "Espaces réponses",
+    "Antibot4Navalny",
+    "Seeders",
+    "Quoters",
+    "WebMasterMarket",
+    "JOP24",
+    "Banque de France",
+    "GUD"
+  ],
+  "mots_cles_text": "",
+  "evenements": [
+    {
+      "date": "2023-09-01",
+      "label": "Activation documentée du mode opératoire",
+      "description": "Selon VIGINUM, le mode opératoire est actif depuis au moins septembre 2023. CheckFirst suggère une activation possible dès août 2023.",
+      "type": "start"
+    },
+    {
+      "date": "2024-01-15",
+      "label": "Identification par AFP et Bot Blocker",
+      "description": "Première identification publique de l'opération par l'AFP et le collectif Bot Blocker en janvier 2024.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-02-07",
+      "label": "Manœuvre Banque de France et DGSI (false flag GUD)",
+      "description": "Diffusion d'une vidéo présentée comme un montage du Groupe Union Défense menaçant de « brûler la Banque de France ». S'inscrit dans une manœuvre plus large d'usurpation de la Banque de France et de la DGSI invitant la population à retirer massivement des liquidités.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-04-24",
+      "label": "Manœuvre 162 comptes X (cas documenté)",
+      "description": "Opération visant à diffuser un faux graffiti Lekto à 162 comptes X, citée en exemple par VIGINUM.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-06-10",
+      "label": "Publication du rapport public VIGINUM (FR)",
+      "description": "SGDSN/VIGINUM publie le rapport public nommant et caractérisant le mode opératoire Matriochka.",
+      "type": "custom"
+    },
+    {
+      "date": "2024-06-11",
+      "label": "Publication du rapport public VIGINUM (EN)",
+      "description": "Version anglaise du rapport publiée par le SGDSN.",
+      "type": "custom"
+    }
+  ]
+}

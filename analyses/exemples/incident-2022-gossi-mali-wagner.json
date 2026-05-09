@@ -1,0 +1,343 @@
+{
+  "code_operation": "2022-gossi-mali-wagner",
+  "date_creation": "2026-05-08",
+  "date_derniere_maj": "2026-05-08",
+  "statut": "terminee",
+  "efficacite_estimee": "moyenne",
+  "portee_estimee": "moyenne",
+  "date_debut": "2022-04-20",
+  "date_fin": "2022-04-22",
+  "commentaires": "Mise en scène d'un faux charnier à 3,5 km de la base militaire française de Gossi (Mali), rendue à l'armée malienne le mardi 19/04/2022. Opération attribuée au groupe paramilitaire russe Wagner. Selon l'État-major des armées (EMA) français, les cadavres enterrés sommairement par des « soldats de type caucasien » (vraisemblablement Wagner) dans les images drone proviendraient probablement d'une opération conjointe FAMa + supplétifs russes menée à Hombori quelques jours plus tôt. Riposte française par la transparence (déclaration du colonel Pascal Ianni, porte-parole de l'EMA en avril 2022, promu général de brigade et nommé commandant pour l'Afrique en juin 2024) : la captation drone a été montrée à plusieurs médias avant autorisation de diffusion par France 24. La junte malienne a réagi en accusant la France d'« espionnage » et de « subversion » (colonel Abdoulaye Maïga, ministre de l'Administration territoriale et porte-parole du gouvernement malien à l'époque, devenu Premier ministre par intérim le 21/08/2022), démentant le rôle de Wagner. L'opération s'inscrit dans un contexte de sentiment anti-français préexistant en Afrique de l'Ouest et de crise diplomatique entre Bamako et Paris depuis le coup d'État malien de mai 2021. Précision factuelle (audit 2026-05-08) : l'opération conjointe FAMa+supplétifs russes à Hombori s'est déroulée le 19/04/2022 sur le marché hebdomadaire, après l'explosion d'un véhicule Wagner sur une mine.",
+  "attaquants": [
+    {
+      "nom": "Groupe Wagner",
+      "type": "groupe_mercenaire",
+      "pays_origine": "Russie",
+      "niveau_attribution": "Confirmé",
+      "role_dans_operation": "Opérateur principal et mise en scène",
+      "description": "Groupe paramilitaire russe déployé au Mali à partir de fin 2021. Accusé par Paris d'avoir orchestré la mise en scène du faux charnier. Confirmation par l'armée française via captation drone montrant des soldats « de type caucasien » enterrer sommairement des cadavres."
+    }
+  ],
+  "cibles": [
+    {
+      "pays": "France",
+      "region": "Forces armées au Sahel",
+      "description_libre": "Crédibilité et légitimité des forces françaises engagées au Mali (opération Barkhane).",
+      "type_cible": [
+        "Primaire"
+      ]
+    },
+    {
+      "pays": "Mali",
+      "region": "Région de Gossi (Gourma)",
+      "description_libre": "Opinion publique malienne et sahélienne, ciblée pour rejet des forces françaises.",
+      "type_cible": [
+        "Finale"
+      ]
+    },
+    {
+      "pays": "Afrique francophone",
+      "region": "Sahel et au-delà",
+      "description_libre": "Audiences africaines francophones susceptibles de relayer un narratif anti-français, dans un contexte de sentiment anti-colonial préexistant exploité par la propagande russe (RT, Sputnik, Seneweb au Sénégal, etc.).",
+      "type_cible": [
+        "Secondaire"
+      ]
+    }
+  ],
+  "canaux_diffusion": [
+    {
+      "canal": "Réseau social",
+      "plateforme": "Twitter",
+      "ampleur": "Diffusion initiale par comptes pro-Wagner et pro-russes le mercredi 20/04/2022"
+    },
+    {
+      "canal": "Vidéo",
+      "plateforme": "Plateformes de partage vidéo",
+      "ampleur": "Diffusion d'images du faux charnier"
+    }
+  ],
+  "relais": [
+    {
+      "nom": "Comptes pro-Wagner et pro-russes",
+      "type": "Humain et automatisé",
+      "role": "Diffusion initiale et amplification",
+      "degre_conscience": "conscient"
+    },
+    {
+      "nom": "Comptes pan-africanistes anti-français",
+      "type": "Humain",
+      "role": "Relai idéologique dans les sphères militantes anti-néocoloniales",
+      "degre_conscience": "semi-conscient"
+    },
+    {
+      "nom": "Junte malienne",
+      "type": "Humain",
+      "role": "Relai politique post-événement (accusations d'espionnage et de subversion contre la France)",
+      "degre_conscience": "conscient"
+    }
+  ],
+  "techniques": [
+    {
+      "code_disarm": "T0074.001",
+      "nom": "Geopolitical Advantage",
+      "description": "Probable. Substitution stratégique de la France par la Russie au Sahel."
+    },
+    {
+      "code_disarm": "T0073",
+      "nom": "Determine Target Audiences",
+      "description": "Probable. Ciblage des audiences sahéliennes et françaises."
+    },
+    {
+      "code_disarm": "T0066",
+      "nom": "Degrade Adversary",
+      "description": "Probable. Discréditation des forces françaises présentées comme responsables d'exactions."
+    },
+    {
+      "code_disarm": "T0072.001",
+      "nom": "Geographic Segmentation",
+      "description": "Probable. Segmentation géographique sur le Sahel et le Mali."
+    },
+    {
+      "code_disarm": "T0003",
+      "nom": "Leverage Existing Narratives",
+      "description": "Probable. Exploitation des narratifs anti-français préexistants en Afrique de l'Ouest."
+    },
+    {
+      "code_disarm": "T0087",
+      "nom": "Develop Video-Based Content",
+      "description": "Probable. Production de contenu vidéo mettant en scène le faux charnier."
+    },
+    {
+      "code_disarm": "T0146",
+      "nom": "Account Asset",
+      "description": "Probable. Mobilisation d'un parc de comptes diffuseurs."
+    },
+    {
+      "code_disarm": "T0102.001",
+      "nom": "Use Existing Echo Chambers/Filter Bubbles",
+      "description": "Probable. Exploitation des chambres d'écho pan-africanistes et anti-françaises."
+    },
+    {
+      "code_disarm": "T0151.001",
+      "nom": "Social Media Platform",
+      "description": "Probable. Diffusion via plateformes de réseaux sociaux, principalement Twitter."
+    },
+    {
+      "code_disarm": "T0115.003",
+      "nom": "One-Way Direct Posting",
+      "description": "Probable. Publication directe des images sans interaction réelle."
+    },
+    {
+      "code_disarm": "T0118",
+      "nom": "Amplify Existing Narrative",
+      "description": "Probable. Amplification du narratif anti-Barkhane et anti-français."
+    },
+    {
+      "code_disarm": "T0127.002",
+      "nom": "Encourage Physical Violence",
+      "description": "Probable. Incitation indirecte à l'hostilité physique contre les forces françaises."
+    },
+    {
+      "code_disarm": "T0129.007",
+      "nom": "Delete Accounts/Account Activity",
+      "description": "Probable. Effacement des traces opérationnelles après diffusion."
+    },
+    {
+      "code_disarm": "T0086.003",
+      "nom": "Deceptively Edit Images (Cheap Fakes)",
+      "description": "Explicite. Mise en scène et manipulation des images dénoncée explicitement par l'EMA français comme faux charnier filmé par des soldats Wagner."
+    },
+    {
+      "code_disarm": "T0099",
+      "nom": "Prepare Assets Impersonating Legitimate Entities",
+      "description": "Probable. Préparation d'actifs (compte @DiaDiarra6) se présentant comme un ancien militaire malien crédible."
+    },
+    {
+      "code_disarm": "T0143.003",
+      "nom": "Impersonated Persona",
+      "description": "Probable. Compte usurpant l'identité d'un ancien militaire malien pour publier le premier signalement."
+    },
+    {
+      "code_disarm": "T0049",
+      "nom": "Flood Information Space",
+      "description": "Probable. Amplification coordonnée par comptes pro-Wagner et trolls (@Walid_Leberbere et autres)."
+    },
+    {
+      "code_disarm": "T0049.001",
+      "nom": "Trolls Amplify and Manipulate",
+      "description": "Probable. Amplification par comptes inauthentiques pro-russes et pan-africanistes."
+    }
+  ],
+  "techniques_dima": [
+    {
+      "code_dima": "TE0132",
+      "nom": "Biais de négativité",
+      "description": "Probable. Choix d'images très fortes (charnier) pour maximiser l'impact émotionnel."
+    },
+    {
+      "code_dima": "TE0211",
+      "nom": "Biais de corrélation illusoire",
+      "description": "Probable. Lien fallacieux établi entre le retrait français de Gossi et la découverte du \"charnier\"."
+    },
+    {
+      "code_dima": "TE0314",
+      "nom": "Effet de suggestion",
+      "description": "Probable. Suggestion de la responsabilité française sans démonstration."
+    },
+    {
+      "code_dima": "TE0321",
+      "nom": "Stéréotype implicite",
+      "description": "Probable. Activation de stéréotypes anti-coloniaux et anti-occidentaux préexistants."
+    },
+    {
+      "code_dima": "TE0212",
+      "nom": "Biais de la preuve anecdotique",
+      "description": "Probable. Le faux charnier présenté comme preuve singulière et accablante d'exactions françaises, sans corroboration."
+    },
+    {
+      "code_dima": "TE0231",
+      "nom": "Biais d'homogénéité",
+      "description": "Probable. Renforcement par cohérence apparente avec les narratifs anti-français déjà présents dans les chambres d'écho pan-africanistes."
+    }
+  ],
+  "formats_contenu": [
+    {
+      "format": "Vidéo",
+      "langue": "Français"
+    },
+    {
+      "format": "Image (photographie de scène)",
+      "langue": "Français"
+    },
+    {
+      "format": "Publication réseau social",
+      "langue": "Français"
+    }
+  ],
+  "objectifs": [
+    {
+      "type_objectif": "delegitimation",
+      "description": "Délégitimer les forces armées françaises au Mali en les présentant comme auteurs d'exactions."
+    },
+    {
+      "type_objectif": "perturbation",
+      "description": "Accélérer le rejet politique et populaire de la présence française au Sahel pour faciliter la substitution par Wagner."
+    },
+    {
+      "type_objectif": "desinformation",
+      "description": "Diffuser une fausse preuve d'exactions imputées aux forces françaises."
+    }
+  ],
+  "narratifs": [
+    {
+      "description": "Les forces armées françaises auraient laissé un charnier près de la base de Gossi avant son retrait, témoignant d'exactions.",
+      "veracite": "faux",
+      "themes": [
+        "Forces armées",
+        "Mali",
+        "Néocolonialisme",
+        "Exactions"
+      ]
+    },
+    {
+      "description": "La France se serait livrée à de l'espionnage et de la subversion contre l'armée malienne (FAMa) en publiant de fausses images montées de toutes pièces (narratif relayé par la junte malienne après le démenti français).",
+      "veracite": "faux",
+      "themes": [
+        "Espionnage",
+        "Subversion",
+        "Diplomatie Bamako-Paris"
+      ]
+    }
+  ],
+  "leviers_psychologiques": [
+    "Principe d'autorité",
+    "Principe de la preuve sociale"
+  ],
+  "documents": [
+    {
+      "titre": "Afrique : comment la Russie nourrit la guerre informationnelle (Slate.fr)",
+      "type": "article",
+      "url": "https://www.slate.fr/story/229508/afrique-russie-intox-manipulations-groupe-wagner-guerre-information-mali-centrafrique-influence"
+    },
+    {
+      "titre": "Charnier de Gossi : la riposte française à la guerre informationnelle russe (Portail de l'IE)",
+      "type": "autre",
+      "url": "https://www.portail-ie.fr/univers/influence-lobbying-et-guerre-de-linformation/2022/charnier-de-gossi-la-riposte-francaise-a-la-guerre-informationnelle-russe/"
+    },
+    {
+      "titre": "Bamako va enquêter sur le charnier de Gossi et accuse l'armée française d'espionnage (Opex360)",
+      "type": "article",
+      "url": "https://www.opex360.com/2022/04/27/bamako-va-enqueter-sur-le-charnier-de-gossi-et-accuse-larmee-francaise-despionnage-et-de-subversion/"
+    },
+    {
+      "titre": "Charnier de Gossi : Cambon dénonce la « manœuvre grossière » des milices Wagner (Public Sénat)",
+      "type": "article",
+      "url": "https://www.publicsenat.fr/actualites/politique/charnier-de-gossi-au-mali-cambon-denonce-la-manoeuvre-grossiere-des-milices-wagner"
+    },
+    {
+      "titre": "Page DIOD Wiki - Charnier de Gossi",
+      "type": "autre",
+      "url": "https://diod.m82-project.org/index.php/Charnier_de_Gossi"
+    }
+  ],
+  "mots_cles": [
+    "Wagner",
+    "Mali",
+    "Gossi",
+    "Hombori",
+    "Russie",
+    "France",
+    "Sahel",
+    "Barkhane",
+    "FAMa",
+    "Faux charnier",
+    "Mise en scène",
+    "Substitution informationnelle",
+    "Pan-africanisme"
+  ],
+  "mots_cles_text": "",
+  "evenements": [
+    {
+      "date": "2022-04-19",
+      "label": "Massacre de Hombori (opération conjointe FAMa+Wagner pré-charnier)",
+      "description": "Le 19/04/2022, opération conjointe FAMa et supplétifs russes Wagner à Hombori (marché hebdomadaire), après explosion d'un véhicule Wagner sur mine. Source probable des cadavres déplacés ensuite à Gossi.",
+      "type": "custom"
+    },
+    {
+      "date": "2022-04-19",
+      "label": "Premier tweet @DiaDiarra6 (préparation narrative)",
+      "description": "Le 19/04/2022 au soir, premier tweet du compte @DiaDiarra6 (se présentant comme ancien militaire malien) annonçant la découverte imminente du charnier.",
+      "type": "custom"
+    },
+    {
+      "date": "2022-04-19",
+      "label": "Rétrocession officielle de la base de Gossi",
+      "description": "L'armée française remet la base de Gossi à l'armée malienne (FAMa) le mardi 19/04/2022, conformément au calendrier de redéploiement de Barkhane. Un détachement FAMa est déployé immédiatement, renforcé le mercredi 20/04.",
+      "type": "custom"
+    },
+    {
+      "date": "2022-04-20",
+      "label": "Diffusion des images du faux charnier",
+      "description": "Mise en ligne sur Twitter le mercredi 20/04 d'images d'un prétendu charnier découvert à 3,5 km de la base, accompagnées d'un commentaire pointant la responsabilité française.",
+      "type": "start"
+    },
+    {
+      "date": "2022-04-21",
+      "label": "Accusation publique française par l'EMA",
+      "description": "Le jeudi 21/04, l'État-major des armées français accuse les mercenaires Wagner d'avoir mis en scène le charnier, s'appuyant sur des images captées par drone. Présentation des images à plusieurs médias.",
+      "type": "custom"
+    },
+    {
+      "date": "2022-04-22",
+      "label": "Révélations officielles publiques (autorisation France 24)",
+      "description": "Le vendredi 22/04, autorisation de diffusion par France 24 des images drone montrant des hommes en train de filmer la mise en scène. Communication officielle française par transparence (général Ianni). Communiqué de l'armée malienne le même soir, démentant la responsabilité FAMa et taisant le rôle de Wagner.",
+      "type": "end"
+    },
+    {
+      "date": "2022-04-26",
+      "label": "Ouverture d'une enquête militaire malienne",
+      "description": "La justice militaire malienne annonce mardi 26/04 l'ouverture d'une enquête. Le gouvernement malien (col. Maïga) accuse la France d'« espionnage » (drone le 20/04) et de « subversion » (publication d'images prétendument montées).",
+      "type": "custom"
+    }
+  ]
+}
