@@ -50,7 +50,7 @@ Outil de visualisation de plusieurs fiches en parallèle. Permet de :
 
 1. Rendez-vous sur la page du dépôt GitHub
 2. Naviguez dans le dossier `tools/`
-3. Téléchargez le dossier complet via **Code > Download ZIP** ou via un outil dédié (voir ci-dessous)
+3. Téléchargez le dossier complet, ou juste tools.zip
 4. Décompressez et ouvrez le fichier HTML dans votre navigateur
 
 
