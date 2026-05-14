@@ -1,8 +1,8 @@
 # Ontologie de la donnée — opérations d'influence numérique
-**Version :** 0  
+**Version :** 1  
 **Statut :** Ébauche  
-**Date :** 2026-05-08  
-**Cadres de référence :** Diamond Model, DISARM red framework, DIMA
+**Date :** 2026-05-13  
+**Cadres de référence :** Diamond Model, DISARM red framework, DIMA, SAT (Structured Analytic Techniques)
 
 > **Note de lecture :** les types `enum` marqués *[proposé]* n'existent pas en tant que liste fermée dans le code source — ce sont des valeurs éditoriales suggérées pour normalisation future. Les champs correspondants sont des `string` libres dans l'implémentation actuelle.
 
@@ -17,7 +17,7 @@ Représente une opération d'influence numérique identifiée et analysée.
 | `code_operation` | string | 1 | Identifiant textuel (ex : `OP-2024-001`) |
 | `date_creation` | date ISO | 1 | Date de création de la fiche |
 | `date_derniere_maj` | date ISO | 1 | Date de dernière modification |
-| `statut` | enum | 1 | `en_cours`, `terminee`, `suspendue` |
+| `statut` | enum | 1 | `en_cours`, `terminee`, `en_analyse`, `archivee` |
 | `date_debut` | date ISO | 0..1 | Début estimé de l'opération |
 | `date_fin` | date ISO | 0..1 | Fin estimée de l'opération |
 | `efficacite_estimee` | string | 0..1 | Appréciation qualitative de l'efficacité |
@@ -26,6 +26,8 @@ Représente une opération d'influence numérique identifiée et analysée.
 | `mots_cles` | string[] | 0..N | Étiquettes libres pour la recherche |
 | `mots_cles_text` | string | 0..1 | **Champ UI interne** — tampon de saisie des mots-clés, non exporté dans le JSON final |
 | `evenements` | Evenement[] | 0..N | Jalons chronologiques |
+| `deception_detection` | DeceptionDetection | 0..1 | Résultats de l'analyse de détection de tromperie (SAT 9.1) |
+| `structured_techniques_applied` | TechniqueSATAppliquee[] | 0..N | Techniques SAT documentées sur ce dossier |
 
 ---
 
@@ -136,7 +138,7 @@ Valeur parmi une liste fixe (principes de Cialdini) :
 | Attribut | Type | Cardinalité | Description |
 |---|---|---|---|
 | `date` | date ISO | 1 | Date de l'événement |
-| `type` | enum | 1 | `start`, `end`, `custom` |
+| `type` | enum | 1 | `start`, `end`, `custom`, `analysis`, `attribution` |
 | `label` | string | 0..1 | Titre court |
 | `description` | text | 0..1 | Détail |
 
@@ -147,6 +149,30 @@ Valeur parmi une liste fixe (principes de Cialdini) :
 | `titre` | string | 0..1 | Titre de la source |
 | `type` | enum | 0..1 | `rapport`, `article`, `archive`, `screenshot`, `autre` |
 | `url` | URL | 0..1 | Lien https uniquement |
+
+### 4.3 `DeceptionDetection`
+
+Objet unique embarqué dans `Incident`. Correspond à la technique SAT 9.1 (Détection de tromperie). Les quatre indicateurs sont les cadres d'évaluation MOM / POP / MOSES / EVE.
+
+| Attribut | Type | Cardinalité | Description |
+|---|---|---|---|
+| `mom_checked` | boolean | 1 | MOM — Motive, Opportunity, Means : l'acteur avait-il les moyens et l'intention de tromper ? |
+| `pop_checked` | boolean | 1 | POP — Past Opposition Practices : l'acteur a-t-il déjà eu recours à la tromperie ? |
+| `moses_checked` | boolean | 1 | MOSES — Manipulate, Observe, Signal, Evaluate, Survive : la tromperie sert-elle une stratégie de survie ou de manipulation observable ? |
+| `eve_checked` | boolean | 1 | EVE — Evaluate Veracity of Evidence : les preuves résistent-elles à une évaluation d'authenticité ? |
+| `notes` | text | 0..1 | Observations, indices identifiés, niveau de confiance |
+
+### 4.4 `TechniqueSATAppliquee`
+
+Enregistre une technique SAT (issue du référentiel `SAT_TECHNIQUES`) appliquée à ce dossier.
+
+| Attribut | Type | Cardinalité | Description |
+|---|---|---|---|
+| `technique_id` | string | 0..1 | Identifiant SAT (ex : `4.3`) — référence vers `SAT_TECHNIQUES[].id` |
+| `technique_nom` | string | 1 | Nom de la technique (ex : `Analyse des hypothèses concurrentes (ACH)`) |
+| `date_application` | date ISO | 0..1 | Date à laquelle la technique a été appliquée |
+| `analyste` | string | 0..1 | Identifiant ou initiales de l'analyste |
+| `notes` | text | 0..1 | Résultats, conclusions, niveau de confiance |
 
 ---
 
@@ -163,11 +189,12 @@ Valeur parmi une liste fixe (principes de Cialdini) :
 
 ### `statut`
 
-| Valeur | Signification |
-|---|---|
-| `en_cours` | Analyse en cours |
-| `terminee` | Analyse finalisée |
-| `suspendue` | Analyse suspendue |
+| Valeur | Libellé UI | Signification |
+|---|---|---|
+| `en_cours` | En cours | Analyse en cours |
+| `terminee` | Terminée | Analyse finalisée |
+| `en_analyse` | En analyse | Dossier reçu, analyse non démarrée |
+| `archivee` | Archivée | Dossier clos et archivé |
 
 ### `degre_conscience`
 
@@ -183,19 +210,21 @@ Valeur parmi une liste fixe (principes de Cialdini) :
 
 ```
 Incident
-  ├── [0..N] Attaquant          → Adversary
-  ├── [0..N] Cible              → Victim
-  ├── [0..N] Canal              → Infrastructure
-  ├── [0..N] Relais             → Infrastructure
-  ├── [0..N] Technique DISARM   → Capability
-  ├── [0..N] Technique DIMA     → Capability
-  ├── [0..N] FormatContenu      → Capability
+  ├── [0..N] Attaquant                  → Adversary
+  ├── [0..N] Cible                      → Victim
+  ├── [0..N] Canal (canaux_diffusion)   → Infrastructure
+  ├── [0..N] Relais                     → Infrastructure
+  ├── [0..N] Technique DISARM           → Capability
+  ├── [0..N] Technique DIMA             → Capability
+  ├── [0..N] FormatContenu              → Capability
   ├── [0..N] Objectif
   ├── [0..N] Narratif
   │              └── [0..N] themes (string)
   ├── [0..N] LevierPsychologique (string enum)
   ├── [0..N] Document
-  └── [0..N] Evenement
+  ├── [0..N] Evenement
+  ├── [0..1] DeceptionDetection         → SAT 9.1
+  └── [0..N] TechniqueSATAppliquee      → SAT_TECHNIQUES[]
 ```
 
 ---
@@ -269,6 +298,22 @@ Incident
   "evenements": [
     { "date": "2024-09-01", "type": "start", "label": "Début de l'opération", "description": "" },
     { "date": "2024-11-03", "type": "custom", "label": "Pic de diffusion", "description": "Volume x10 en 48h" }
+  ],
+  "deception_detection": {
+    "mom_checked": true,
+    "pop_checked": true,
+    "moses_checked": false,
+    "eve_checked": false,
+    "notes": "Historique de campagnes similaires documenté par l'UE. Moyens techniques confirmés."
+  },
+  "structured_techniques_applied": [
+    {
+      "technique_id": "4.3",
+      "technique_nom": "Analyse des hypothèses concurrentes (ACH)",
+      "date_application": "2025-01-10",
+      "analyste": "MF",
+      "notes": "Trois hypothèses évaluées. Attribution à acteur étatique retenue avec niveau Probable."
+    }
   ]
 }
 ```
