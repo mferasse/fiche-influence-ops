@@ -25,8 +25,10 @@ Formulaire de documentation d'une opération d'influence. Permet de renseigner :
 
 - Identité et niveau d'attribution des attaquants et des cibles (Diamond Model)
 - Techniques DISARM mobilisées (~391 techniques référencées)
-- Techniques cognitives DIMA (~40 biais)
+- Techniques cognitives DIMA (~56 biais)
 - Narratifs, jalons chronologiques, événements clés
+
+Importe une analyse produite avec l'[outil DIMA](https://m82-project.github.io/DIMA/) : les techniques sont fusionnées dans les techniques cognitives de la fiche.
 
 Génère un export **JSON** (format fiche) et un export graphique **Diamond Model en SVG**.
 
