@@ -42,6 +42,10 @@ Les champs à valeurs prédéfinies sont des listes fermées, chacune accompagn�
 - **SVG** : le schéma Diamond Model ;
 - **MediaWiki** : la fiche mise en forme en wikitexte (fichier `.txt`).
 
+![Saisie : techniques DISARM de l'opération Matriochka, thème sombre](captures/saisie-1-capacites.png)
+
+![Saisie : Diamond Model de l'incident « Macron-Epstein » (2026)](captures/saisie-2-diamond.png)
+
 ### `visualisation-fiche-vX.html` : visualisation comparative
 
 - charge une ou plusieurs fiches JSON, par glisser-déposer ou depuis une URL Git (voir « Réseau ») ;
@@ -49,6 +53,12 @@ Les champs à valeurs prédéfinies sont des listes fermées, chacune accompagn�
 - vue détaillée d'une opération : Diamond Model, matrice des techniques, narratifs, portée et efficacité avec leurs observables, sources ;
 - interface en français ou en anglais ;
 - les bulles de la chronologie se déplacent à la main ; leurs positions peuvent être exportées en JSON (un fichier par opération) et réimportées.
+
+![Visualisation : chronologie comparée de quatre opérations (RRN, Matriochka, Storm-1516, African Initiative), 2022-2026](captures/visualisation-1-chronologie.png)
+
+![Visualisation : matrice des techniques DISARM partagées entre cinq opérations](captures/visualisation-2-matrice.png)
+
+*Captures réalisées avec des fiches publiées sur [diod.m82-project.org](https://diod.m82-project.org).*
 
 ---
 
