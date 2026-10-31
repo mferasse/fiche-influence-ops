@@ -1,12 +1,12 @@
 # Ontologie de la donnée : opérations d'influence numérique
-**Version :** 2 (schéma 1.1)  
-**Statut :** référence, alignée sur `saisie-fiche-v3.html` et `visualisation-fiche-v3.html`  
-**Date :** 2026-10-30  
+**Version :** 3 (schéma 1.2)  
+**Statut :** référence, alignée sur `saisie-fiche-v3.1.html` et `visualisation-fiche-v3.1.html`  
+**Date :** 2026-10-31  
 **Cadres de référence :** Diamond Model, DISARM red framework, DIMA, SAT (Structured Analytic Techniques)  
-**Schéma formel :** [`schema-incident-1.1.json`](schema-incident-1.1.json) (JSON Schema draft 2020-12)  
+**Schéma formel :** [`schema-incident-1.2.json`](schema-incident-1.2.json) (JSON Schema draft 2020-12)  
 **Licence :** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr), © 2026 Mathieu Ferasse. Reprise libre, y compris commerciale, avec mention de la source.
 
-> **Règle de compatibilité.** Tous les champs ajoutés par le schéma 1.1 sont optionnels : une fiche 1.0 reste lisible par les outils v3. Le JSON Schema, lui, ne valide une fiche 1.0 que si ses valeurs sont dans les listes. À l'import, une valeur hors liste n'est jamais rejetée ni effacée : elle est reprise (§6). Les champs inconnus de l'outil sont conservés et réexportés tels quels (§7).
+> **Règle de compatibilité.** Tous les champs ajoutés par les schémas 1.1 et 1.2 sont optionnels : une fiche 1.0 ou 1.1 reste lisible par les outils v3.1, et une fiche 1.2 traverse un outil v3 sans perte (le sous-bloc `phenomene` y est conservé comme champ inconnu). Le JSON Schema, lui, ne valide une fiche 1.0 que si ses valeurs sont dans les listes. À l'import, une valeur hors liste n'est jamais rejetée ni effacée : elle est reprise (§6). Les champs inconnus de l'outil sont conservés et réexportés tels quels (§7).
 
 ---
 
@@ -16,7 +16,7 @@ Représente une opération d'influence numérique identifiée et analysée.
 
 | Attribut | Type | Cardinalité | Description |
 |---|---|---|---|
-| `version_schema` | string | 0..1 | `"1.1"`, écrit à l'export. Absent = fiche 1.0 |
+| `version_schema` | string | 0..1 | `"1.2"`, écrit à l'export. Absent = fiche 1.0 |
 | `code_operation` | string | 1 | Identifiant textuel (ex : `incident-2026-doppelganger-france-ru`) |
 | `date_creation` | date ISO | 1 | Date de création de la fiche |
 | `date_derniere_maj` | date ISO | 1 | Date de dernière modification |
@@ -216,6 +216,26 @@ Enregistre une technique SAT (issue du référentiel `SAT_TECHNIQUES`) appliqué
 | `observables` | Observable[] | 0..50 | Faits qui fondent le niveau |
 | `origine` | enum `origine_evaluation` | 0..1 | **`efficacite` seulement** : observation directe ou analyse externe |
 | `origine_source` | string | 0..1 | **`efficacite` seulement** : quelle analyse externe (auteur, date) |
+| `phenomene` | EvaluationPhenomene | 0..1 | Schéma 1.2. Évaluation du phénomène général, à côté de celle de l'opération |
+
+#### `EvaluationPhenomene` (`portee.phenomene`, `efficacite.phenomene`)
+
+Une même case peut porter deux évaluations : la contribution propre de l'opération (le bloc) et le phénomène général dans lequel elle s'inscrit (le sous-bloc). Exemple : une panique bien réelle (phénomène : effet élevé) sur laquelle une opération a surfé sans presque rien y ajouter (opération : effet faible).
+
+| Attribut | Type | Cardinalité | Description |
+|---|---|---|---|
+| `niveau` | enum `niveau_evaluation` | 0..1 | Voir §5 |
+| `confiance` | enum `confiance` | 0..1 | Voir §5 |
+| `synthese` | text | 0..1 | Justification du niveau retenu |
+| `observables` | Observable[] | 0..50 | Faits qui fondent le niveau |
+| `origine` | enum `origine_evaluation` | 0..1 | **`efficacite.phenomene` seulement** |
+| `origine_source` | string | 0..1 | **`efficacite.phenomene` seulement** |
+
+Pas de `perimetre` : il est implicite (phénomène). Règles :
+- un sous-bloc rempli suppose que le bloc évalue l'opération : `perimetre` du bloc vaut `operation` (le JSON Schema admet aussi le vide) ;
+- une fiche qui n'évalue que le phénomène garde la forme 1.1 : bloc en `perimetre: "phenomene"`, sans sous-bloc ;
+- un sous-bloc vide n'est pas exporté ;
+- `portee_estimee` / `efficacite_estimee` restent dérivés du bloc (l'opération), jamais du sous-bloc.
 
 #### `Observable`
 
@@ -338,7 +358,7 @@ Effets recherchés : `polarisation`, `delegitimation` (Délégitimation), `souti
 
 ## 6. Reprise à l'import
 
-Les outils v3 lisent les fiches 1.0 et les fiches écrites à la main. Pour chaque champ énuméré, dans l'ordre :
+Les outils v3.1 lisent les fiches 1.0, 1.1 et les fiches écrites à la main. Pour chaque champ énuméré, dans l'ordre :
 
 1. valeur exacte de la liste : gardée ;
 2. même valeur après passage en minuscules, suppression des accents, tiret ou espace remplacé par `_` : normalisée (`Semi-conscient` -> `semi_conscient`, `hors-contexte` -> `hors_contexte`) ;
@@ -365,8 +385,10 @@ Cas particuliers :
 - **Portée et efficacité d'une fiche 1.0** (pas de bloc) : si `portee_estimee` / `efficacite_estimee` est exactement un niveau, il devient `niveau` ; sinon le texte devient `synthese`. Une phrase qui commence par un niveau (« Faible. ... ») va entière dans la synthèse.
 - **Valeurs invalides sans champ de précisions dédié** : dans un bloc d'évaluation, ajoutées à `synthese` ; nature d'observable ou de réponse, ajoutée à la description entre crochets ; confiance d'un narratif, ajoutée à `veracite_precisions`.
 - Les URL qui ne sont pas en `http(s)` sont vidées.
+- **Observables marqués `[phénomène]`** (fiches 1.1, marquage fait à la main faute de sous-bloc) : un observable du bloc dont la description commence par `[phénomène]` (casse, accents et espaces dans les crochets indifférents) est rangé à la fin de `phenomene.observables`, dans l'ordre, marquage retiré. Si le bloc est déjà en `perimetre: "phenomene"`, le marquage est seulement retiré. Si le sous-bloc a déjà 50 observables, l'observable reste en place avec son marquage. Le niveau, la confiance et la synthèse du phénomène ne sont jamais déduits du texte. Si le `perimetre` du bloc était vide, il passe à `operation`.
+- **Bloc en `perimetre: "phenomene"` avec un sous-bloc rempli** (fiche incohérente) : rien n'est supprimé ni fusionné ; la saisie signale le conflit jusqu'à ce que l'analyste le résolve.
 
-La saisie affiche un rapport d'import : nombre de valeurs reprises, détail champ par champ, nombre de champs conservés sans être gérés.
+La saisie affiche un rapport d'import : nombre de valeurs reprises, observables rangés dans le phénomène, avertissements (niveau du phénomène à renseigner, conflit de périmètre), détail champ par champ, nombre de champs conservés sans être gérés. La visualisation applique les mêmes règles sans rapport.
 
 ---
 
@@ -410,11 +432,11 @@ Incident
 
 ---
 
-## 9. Exemple JSON 1.1
+## 9. Exemple JSON 1.2
 
 ```json
 {
-  "version_schema": "1.1",
+  "version_schema": "1.2",
   "code_operation": "incident-2025-exemple-france-xx",
   "date_creation": "2025-01-15",
   "date_derniere_maj": "2025-01-15",
@@ -434,7 +456,21 @@ Incident
         "source_url": "https://example.com/verification",
         "source_titre": "Service de vérification"
       }
-    ]
+    ],
+    "phenomene": {
+      "niveau": "elevee",
+      "confiance": "elevee",
+      "synthese": "Le sujet était déjà très présent avant l'opération : pic de recherches et forte couverture médiatique.",
+      "observables": [
+        {
+          "description": "Pic de recherches sur le sujet, trois semaines avant les premiers contenus de l'opération",
+          "date": "2024-08-12",
+          "nature": "attention",
+          "source_url": "https://example.com/tendances",
+          "source_titre": "Outil de tendances de recherche"
+        }
+      ]
+    }
   },
   "efficacite": {
     "niveau": "indeterminee",

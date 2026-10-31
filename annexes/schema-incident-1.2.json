@@ -1,0 +1,872 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema-incident-1.2.json",
+  "$comment": "Licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), (c) 2026 Mathieu Ferasse.",
+  "title": "Fiche d'opération d'influence, schéma 1.2",
+  "description": "Valide une fiche exportée par saisie-fiche-v3.1. Tous les champs 1.1 et 1.2 sont optionnels et les champs inconnus sont admis (additionalProperties). Une fiche 1.0 dont des valeurs sortent des listes ne valide pas ici, mais reste lisible par les outils v3.1, qui la reprennent à l'import (voir schema-incident.md §6). Avec un sous-bloc phenomene, le périmètre du bloc principal doit être operation (ou vide). Généré depuis la constante ENUMS de saisie-fiche-v3.1.html.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "code_operation"
+  ],
+  "$defs": {
+    "observable": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "description": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "date": {
+          "type": "string",
+          "description": "Date ISO AAAA-MM-JJ ou vide.",
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2}.*)?$"
+        },
+        "nature": {
+          "type": "string",
+          "enum": [
+            "",
+            "substrat",
+            "attention",
+            "engagement",
+            "croyance",
+            "comportement",
+            "reponse"
+          ],
+          "description": "Valeur de l'énumération « nature_observable » (ou vide)."
+        },
+        "source_url": {
+          "type": "string",
+          "description": "URL http(s) ou vide.",
+          "pattern": "^(https?://.+)?$"
+        },
+        "source_titre": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    }
+  },
+  "properties": {
+    "version_schema": {
+      "type": "string",
+      "enum": [
+        "1.0",
+        "1.1",
+        "1.2"
+      ]
+    },
+    "code_operation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "date_creation": {
+      "type": "string",
+      "description": "Date ISO AAAA-MM-JJ ou vide.",
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}.*)?$"
+    },
+    "date_derniere_maj": {
+      "type": "string",
+      "description": "Date ISO AAAA-MM-JJ ou vide.",
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}.*)?$"
+    },
+    "statut": {
+      "type": "string",
+      "enum": [
+        "",
+        "en_cours",
+        "terminee",
+        "en_analyse",
+        "archivee"
+      ]
+    },
+    "date_debut": {
+      "type": "string",
+      "description": "Date ISO AAAA-MM-JJ ou vide.",
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}.*)?$"
+    },
+    "date_fin": {
+      "type": "string",
+      "description": "Date ISO AAAA-MM-JJ ou vide.",
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}.*)?$"
+    },
+    "portee": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "niveau": {
+          "type": "string",
+          "enum": [
+            "",
+            "faible",
+            "moyenne",
+            "elevee",
+            "tres_elevee",
+            "indeterminee"
+          ],
+          "description": "Valeur de l'énumération « niveau_evaluation » (ou vide)."
+        },
+        "perimetre": {
+          "type": "string",
+          "enum": [
+            "",
+            "operation",
+            "phenomene"
+          ],
+          "description": "Valeur de l'énumération « perimetre » (ou vide)."
+        },
+        "confiance": {
+          "type": "string",
+          "enum": [
+            "",
+            "faible",
+            "moderee",
+            "elevee"
+          ],
+          "description": "Valeur de l'énumération « confiance » (ou vide)."
+        },
+        "synthese": {
+          "type": "string",
+          "maxLength": 5000
+        },
+        "observables": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "$ref": "#/$defs/observable"
+          }
+        },
+        "phenomene": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "niveau": {
+              "type": "string",
+              "enum": [
+                "",
+                "faible",
+                "moyenne",
+                "elevee",
+                "tres_elevee",
+                "indeterminee"
+              ],
+              "description": "Valeur de l'énumération « niveau_evaluation » (ou vide)."
+            },
+            "confiance": {
+              "type": "string",
+              "enum": [
+                "",
+                "faible",
+                "moderee",
+                "elevee"
+              ],
+              "description": "Valeur de l'énumération « confiance » (ou vide)."
+            },
+            "synthese": {
+              "type": "string",
+              "maxLength": 5000
+            },
+            "observables": {
+              "type": "array",
+              "maxItems": 50,
+              "items": {
+                "$ref": "#/$defs/observable"
+              }
+            }
+          },
+          "description": "Évaluation du phénomène général (schéma 1.2), à côté de celle de l'opération portée par le bloc. Périmètre implicite : phénomène."
+        }
+      },
+      "if": {
+        "required": [
+          "phenomene"
+        ]
+      },
+      "then": {
+        "properties": {
+          "perimetre": {
+            "enum": [
+              "",
+              "operation"
+            ]
+          }
+        }
+      }
+    },
+    "efficacite": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "niveau": {
+          "type": "string",
+          "enum": [
+            "",
+            "faible",
+            "moyenne",
+            "elevee",
+            "tres_elevee",
+            "indeterminee"
+          ],
+          "description": "Valeur de l'énumération « niveau_evaluation » (ou vide)."
+        },
+        "perimetre": {
+          "type": "string",
+          "enum": [
+            "",
+            "operation",
+            "phenomene"
+          ],
+          "description": "Valeur de l'énumération « perimetre » (ou vide)."
+        },
+        "confiance": {
+          "type": "string",
+          "enum": [
+            "",
+            "faible",
+            "moderee",
+            "elevee"
+          ],
+          "description": "Valeur de l'énumération « confiance » (ou vide)."
+        },
+        "synthese": {
+          "type": "string",
+          "maxLength": 5000
+        },
+        "observables": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "$ref": "#/$defs/observable"
+          }
+        },
+        "origine": {
+          "type": "string",
+          "enum": [
+            "",
+            "observation_directe",
+            "analyse_externe"
+          ],
+          "description": "Valeur de l'énumération « origine_evaluation » (ou vide)."
+        },
+        "origine_source": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "phenomene": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "niveau": {
+              "type": "string",
+              "enum": [
+                "",
+                "faible",
+                "moyenne",
+                "elevee",
+                "tres_elevee",
+                "indeterminee"
+              ],
+              "description": "Valeur de l'énumération « niveau_evaluation » (ou vide)."
+            },
+            "confiance": {
+              "type": "string",
+              "enum": [
+                "",
+                "faible",
+                "moderee",
+                "elevee"
+              ],
+              "description": "Valeur de l'énumération « confiance » (ou vide)."
+            },
+            "synthese": {
+              "type": "string",
+              "maxLength": 5000
+            },
+            "observables": {
+              "type": "array",
+              "maxItems": 50,
+              "items": {
+                "$ref": "#/$defs/observable"
+              }
+            },
+            "origine": {
+              "type": "string",
+              "enum": [
+                "",
+                "observation_directe",
+                "analyse_externe"
+              ],
+              "description": "Valeur de l'énumération « origine_evaluation » (ou vide)."
+            },
+            "origine_source": {
+              "type": "string",
+              "maxLength": 1000
+            }
+          },
+          "description": "Évaluation du phénomène général (schéma 1.2), à côté de celle de l'opération portée par le bloc. Périmètre implicite : phénomène."
+        }
+      },
+      "if": {
+        "required": [
+          "phenomene"
+        ]
+      },
+      "then": {
+        "properties": {
+          "perimetre": {
+            "enum": [
+              "",
+              "operation"
+            ]
+          }
+        }
+      }
+    },
+    "portee_estimee": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "efficacite_estimee": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "commentaires": {
+      "type": "string",
+      "maxLength": 10000
+    },
+    "mots_cles": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "string",
+        "maxLength": 200
+      }
+    },
+    "attaquants": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "nom": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "",
+              "etat",
+              "groupe_mercenaire",
+              "organisation_privee",
+              "groupe_activiste",
+              "individu",
+              "inconnu"
+            ],
+            "description": "Valeur de l'énumération « attaquant_type » (ou vide)."
+          },
+          "type_precisions": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "pays_origine": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "niveau_attribution": {
+            "type": "string",
+            "enum": [
+              "",
+              "Confirmé",
+              "Probable",
+              "Possible",
+              "Non attribué"
+            ]
+          },
+          "confiance": {
+            "type": "string",
+            "enum": [
+              "",
+              "faible",
+              "moderee",
+              "elevee"
+            ],
+            "description": "Valeur de l'énumération « confiance » (ou vide)."
+          },
+          "confiance_justification": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "role_dans_operation": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 5000
+          }
+        }
+      }
+    },
+    "cibles": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "pays": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "region": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "description_libre": {
+            "type": "string",
+            "maxLength": 5000
+          },
+          "type_cible": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "maxLength": 50
+            }
+          }
+        }
+      }
+    },
+    "canaux_diffusion": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "canal": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "plateforme": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "ampleur": {
+            "type": "string",
+            "enum": [
+              "",
+              "faible",
+              "moderee",
+              "forte",
+              "massive"
+            ],
+            "description": "Valeur de l'énumération « ampleur » (ou vide)."
+          },
+          "ampleur_precisions": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        }
+      }
+    },
+    "relais": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "nom": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "nature": {
+            "type": "string",
+            "enum": [
+              "",
+              "media",
+              "influenceur",
+              "individu",
+              "ONG",
+              "parti",
+              "institution",
+              "reseau_comptes",
+              "plateforme",
+              "autre"
+            ],
+            "description": "Valeur de l'énumération « relais_nature » (ou vide)."
+          },
+          "automatisation": {
+            "type": "string",
+            "enum": [
+              "",
+              "humain",
+              "automatise",
+              "mixte",
+              "inconnu"
+            ],
+            "description": "Valeur de l'énumération « relais_automatisation » (ou vide)."
+          },
+          "type": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "Dérivé : copie de automatisation (ancien champ libre en 1.0)."
+          },
+          "role": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "degre_conscience": {
+            "type": "string",
+            "enum": [
+              "",
+              "conscient",
+              "semi_conscient",
+              "inconscient"
+            ],
+            "description": "Valeur de l'énumération « degre_conscience » (ou vide)."
+          },
+          "precisions": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        }
+      }
+    },
+    "techniques": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "code_disarm": {
+            "type": "string",
+            "maxLength": 50
+          },
+          "nom": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 5000
+          }
+        }
+      }
+    },
+    "techniques_dima": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "code_dima": {
+            "type": "string",
+            "maxLength": 50
+          },
+          "nom": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 5000
+          }
+        }
+      }
+    },
+    "formats_contenu": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "format": {
+            "type": "string",
+            "enum": [
+              "",
+              "texte",
+              "image",
+              "video",
+              "audio",
+              "article",
+              "site_web",
+              "publication_reseau",
+              "courriel",
+              "document",
+              "autre"
+            ],
+            "description": "Valeur de l'énumération « format » (ou vide)."
+          },
+          "format_precisions": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "genere_ia": {
+            "type": "boolean"
+          },
+          "langue": {
+            "type": "string",
+            "maxLength": 100
+          }
+        }
+      }
+    },
+    "objectifs": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "type_objectif": {
+            "type": "string",
+            "enum": [
+              "",
+              "polarisation",
+              "delegitimation",
+              "soutien_politique",
+              "perturbation",
+              "dissuader",
+              "recruter",
+              "saturer",
+              "autre"
+            ],
+            "description": "Valeur de l'énumération « type_objectif » (ou vide)."
+          },
+          "type_objectif_precisions": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 5000
+          }
+        }
+      }
+    },
+    "narratifs": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "description": {
+            "type": "string",
+            "maxLength": 10000
+          },
+          "veracite": {
+            "type": "string",
+            "enum": [
+              "",
+              "faux",
+              "partiellement_vrai",
+              "trompeur",
+              "hors_contexte",
+              "vrai",
+              "indetermine"
+            ],
+            "description": "Valeur de l'énumération « veracite » (ou vide)."
+          },
+          "veracite_precisions": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "confiance": {
+            "type": "string",
+            "enum": [
+              "",
+              "faible",
+              "moderee",
+              "elevee"
+            ],
+            "description": "Valeur de l'énumération « confiance » (ou vide)."
+          },
+          "themes": {
+            "type": "array",
+            "maxItems": 50,
+            "items": {
+              "type": "string",
+              "maxLength": 200
+            }
+          }
+        }
+      }
+    },
+    "leviers_psychologiques": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "string",
+        "enum": [
+          "Principe de réciprocité",
+          "Principe d’autorité",
+          "Principe d'autorité",
+          "Principe de cohérence",
+          "Principe de la preuve sociale",
+          "Principe de rareté",
+          "Principe de sympathie"
+        ]
+      }
+    },
+    "documents": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "titre": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "",
+              "rapport",
+              "article",
+              "analyse",
+              "video",
+              "archive",
+              "capture",
+              "autre"
+            ],
+            "description": "Valeur de l'énumération « document_type » (ou vide)."
+          },
+          "type_precisions": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "url": {
+            "type": "string",
+            "description": "URL http(s) ou vide.",
+            "pattern": "^(https?://.+)?$"
+          }
+        }
+      }
+    },
+    "evenements": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date ISO AAAA-MM-JJ ou vide.",
+            "pattern": "^(\\d{4}-\\d{2}-\\d{2}.*)?$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "start",
+              "end",
+              "custom",
+              "analysis",
+              "attribution",
+              "reponse"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 5000
+          },
+          "nature_reponse": {
+            "type": "string",
+            "enum": [
+              "",
+              "dementi",
+              "fact_check",
+              "declaration_officielle",
+              "moderation_plateforme",
+              "sanction",
+              "autre"
+            ],
+            "description": "Valeur de l'énumération « nature_reponse » (ou vide)."
+          },
+          "acteur_reponse": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "source_url": {
+            "type": "string",
+            "description": "URL http(s) ou vide.",
+            "pattern": "^(https?://.+)?$"
+          }
+        },
+        "required": [
+          "date",
+          "type"
+        ]
+      }
+    },
+    "deception_detection": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "mom_checked": {
+          "type": "boolean"
+        },
+        "pop_checked": {
+          "type": "boolean"
+        },
+        "moses_checked": {
+          "type": "boolean"
+        },
+        "eve_checked": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "structured_techniques_applied": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "technique_id": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "technique_nom": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "date_application": {
+            "type": "string",
+            "description": "Date ISO AAAA-MM-JJ ou vide.",
+            "pattern": "^(\\d{4}-\\d{2}-\\d{2}.*)?$"
+          },
+          "analyste": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "notes": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        }
+      }
+    }
+  }
+}

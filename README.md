@@ -1,5 +1,5 @@
 # Outils de documentation des opérations d'influence
-<!-- README v2 : 2026-10-30, outils v3 et schéma 1.1 -->
+<!-- README v2 : 2026-10-31, outils v3.1 et schéma 1.2 -->
 
 Deux fichiers HTML autonomes pour documenter, analyser et comparer des opérations d'influence numérique étudiées en sources ouvertes.
 
@@ -11,7 +11,7 @@ Pas d'installation, pas de serveur, pas de compte. On ouvre le fichier HTML dans
 
 - **Diamond Model** : adversaire, capacités, infrastructure, victime, avec un niveau d'attribution (confirmé, probable, possible, non attribué).
 - **DISARM** : techniques offensives de manipulation de l'information, classées par tactique (391 techniques, avec description en français).
-- **DIMA** : biais cognitifs exploités, regroupés en 4 familles (Détecter, Informer, Mémoriser, Agir) (56 techniques).
+- **DIMA** : biais cognitifs exploités, regroupés en 4 familles (Détecter, Informer, Mémoriser, Agir) (17 tactiques, 44 techniques).
 - **SAT** : techniques analytiques structurées de Pherson et Heuer (*Structured Analytic Techniques for Intelligence Analysis*, 4e éd., 2021), 48 techniques, plus une grille de détection de tromperie (MOM, POP, MOSES, EVE).
 - **Cialdini** : 6 leviers psychologiques.
 
@@ -26,7 +26,7 @@ Formulaire de documentation d'une opération :
 - attaquants et cibles, niveau d'attribution et confiance dans l'attribution (Diamond Model) ;
 - techniques DISARM et DIMA mobilisées ;
 - narratifs (véracité, confiance), objectifs, canaux de diffusion, relais (nature et automatisation), formats de contenu ;
-- portée (exposition) et efficacité (effet obtenu), chacune avec un niveau, une confiance, une synthèse et des observables datés et sourcés ;
+- portée (exposition) et efficacité (effet obtenu), chacune avec un niveau, une confiance, une synthèse et des observables datés et sourcés, et, au besoin, deux évaluations côte à côte : la contribution propre de l'opération et le phénomène général dans lequel elle s'inscrit ;
 - chronologie : événements, analyses, attributions, et réponses (démenti, fact-check, déclaration, modération, sanction) ;
 - techniques SAT appliquées et détection de tromperie ;
 - sources et documents.
@@ -77,11 +77,11 @@ Le dossier `tools/` contient aussi les versions précédentes des outils, conser
 
 Une fiche est un fichier **JSON** : lisible à la main, versionnable (diff ligne à ligne dans Git), sans format propriétaire.
 
-Le format suit le **schéma 1.1** :
+Le format suit le **schéma 1.2** :
 - [`annexes/schema-incident.md`](annexes/schema-incident.md) décrit les champs, les entités, les listes de valeurs et les règles de reprise des fiches anciennes ;
-- [`annexes/schema-incident-1.1.json`](annexes/schema-incident-1.1.json) est le JSON Schema (draft 2020-12) correspondant, pour valider une fiche avec un outil tiers.
+- [`annexes/schema-incident-1.2.json`](annexes/schema-incident-1.2.json) est le JSON Schema (draft 2020-12) correspondant, pour valider une fiche avec un outil tiers.
 
-Les champs ajoutés par le schéma 1.1 sont optionnels : une fiche produite par une version précédente reste lisible.
+Les champs ajoutés par les schémas 1.1 et 1.2 sont optionnels : une fiche produite par une version précédente reste lisible.
 
 Des fiches documentées avec ces outils sont consultables sur [diod.m82-project.org](https://diod.m82-project.org).
 
@@ -107,4 +107,4 @@ Aucune télémétrie, aucun appel à un service tiers, aucune police ou biblioth
 ## Licence
 
 - **Outils** (`tools/`) : [PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/), voir le fichier `LICENSE`. Libre pour tout usage non commercial, y compris en situation réelle : particuliers, associations, établissements d'enseignement et de recherche publics, administrations, quel que soit leur financement. Usage commercial : contacter l'auteur (mathieu.ferasse@gmail.com).
-- **Format de données** (`annexes/schema-incident.md`, `annexes/schema-incident-1.1.json`) : [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr), voir `annexes/LICENSE-schema`. Reprise libre, y compris commerciale, à condition de citer la source : tout outil peut lire ou produire des fiches compatibles.
+- **Format de données** (`annexes/schema-incident.md`, `annexes/schema-incident-1.2.json`) : [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr), voir `annexes/LICENSE-schema`. Reprise libre, y compris commerciale, à condition de citer la source : tout outil peut lire ou produire des fiches compatibles.
