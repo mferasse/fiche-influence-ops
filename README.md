@@ -10,7 +10,7 @@ Pas d'installation, pas de serveur, pas de compte. On ouvre le fichier HTML dans
 ## Cadres méthodologiques
 
 - **Diamond Model** : adversaire, capacités, infrastructure, victime, avec un niveau d'attribution (confirmé, probable, possible, non attribué).
-- **DISARM** : techniques offensives de manipulation de l'information, classées par tactique (391 techniques, avec description en français).
+- **DISARM** : techniques offensives de manipulation de l'information, classées par tactique (16 tactiques, 391 techniques et sous-techniques, version 1.6 du cadre, avec description en français).
 - **DIMA** : biais cognitifs exploités, regroupés en 4 familles (Détecter, Informer, Mémoriser, Agir) (17 tactiques, 44 techniques).
 - **SAT** : techniques analytiques structurées de Pherson et Heuer (*Structured Analytic Techniques for Intelligence Analysis*, 4e éd., 2021), 48 techniques, plus une grille de détection de tromperie (MOM, POP, MOSES, EVE).
 - **Cialdini** : 6 leviers psychologiques.
